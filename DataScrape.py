@@ -39,8 +39,14 @@ def get_table_data(page_data):
     print(df) # TEST
 
 def get_fixture_data(page_data):
+    '''
+    Searches the page and finds and store the fixture data into a data frame
+    '''
+
+    # Finds all of the match dates and stores the text into a list
     dates = page_data.find_all('h4')
     dates_text = [date.text.strip() for date in dates]
+
 
     fix = page_data.find('div',{'class':'fixres__body'})
     matches_per_day = []
@@ -48,19 +54,25 @@ def get_fixture_data(page_data):
         matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
 
 
-    ang = page_data.find_all('a',{'class':'matches__item matches__link'})
+    column_names = ['Match Date','Team 1','Team 2','Time']
+    df = pd.DataFrame(columns = column_names)
+
+    match_info = page_data.find_all('a',{'class':'matches__item matches__link'})
     match_index_counter = 0
+
     for i in range(len(dates)):
         for j in range(matches_per_day[i]):
-            ang2 = ang[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
+            target_match = match_info[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
+            teams = [team.text.strip() for team in target_match]
+
+            match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
+            time = match_time.text.strip()
+
             match_index_counter += 1
 
-    match_time = ang.find_all('span',{'class':'matches__date'})
-    time = match_time[0].text.strip()
-    teams = [team.text.strip() for team in ang2]
+            df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time]
 
-    #print(time)
-
+    print(df) #TEST
 
 
 def main():
@@ -74,7 +86,6 @@ def main():
     page = requests.get(url_league_dict['Premier League'])
     page_data = BeautifulSoup(page.text, 'html')
 
-    #get_table_data(page_data)
 
     url = 'https://www.skysports.com/premier-league-fixtures'
     page = requests.get(url)
