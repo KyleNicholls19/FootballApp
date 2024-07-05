@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+
 def remove_astericks(data):
     '''
     Remove potential astericks from a teams name
