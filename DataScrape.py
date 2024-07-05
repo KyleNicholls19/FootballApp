@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-
 def remove_astericks(data):
     '''
     Remove potential astericks from a teams name
@@ -39,6 +38,30 @@ def get_table_data(page_data):
 
     print(df) # TEST
 
+def get_fixture_data(page_data):
+    dates = page_data.find_all('h4')
+    dates_text = [date.text.strip() for date in dates]
+
+    fix = page_data.find('div',{'class':'fixres__body'})
+    matches_per_day = []
+    for i in range(len(dates)):
+        matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
+
+
+    ang = page_data.find_all('a',{'class':'matches__item matches__link'})
+    match_index_counter = 0
+    for i in range(len(dates)):
+        for j in range(matches_per_day[i]):
+            ang2 = ang[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
+            match_index_counter += 1
+
+    match_time = ang.find_all('span',{'class':'matches__date'})
+    time = match_time[0].text.strip()
+    teams = [team.text.strip() for team in ang2]
+
+    #print(time)
+
+
 
 def main():
     url_league_dict =  {
@@ -51,8 +74,12 @@ def main():
     page = requests.get(url_league_dict['Premier League'])
     page_data = BeautifulSoup(page.text, 'html')
 
-    get_table_data(page_data)
+    #get_table_data(page_data)
 
+    url = 'https://www.skysports.com/premier-league-fixtures'
+    page = requests.get(url)
+    page_data = BeautifulSoup(page.text, 'html.parser')
+    get_fixture_data(page_data)
 
 if __name__ == '__main__':
     main()
