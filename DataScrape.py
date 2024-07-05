@@ -47,30 +47,35 @@ def get_fixture_data(page_data):
     dates = page_data.find_all('h4')
     dates_text = [date.text.strip() for date in dates]
 
-
-    fix = page_data.find('div',{'class':'fixres__body'})
+    fix = page_data.find('div',{'class':'fixres__body'}) # Entire fixture list
     matches_per_day = []
     for i in range(len(dates)):
+        # Splits the fixtures by date and counts how many fixtures are on each date
         matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
 
-
+    # Create the data frame to store the data
     column_names = ['Match Date','Team 1','Team 2','Time']
     df = pd.DataFrame(columns = column_names)
 
+    # Finds the data for all the matches
     match_info = page_data.find_all('a',{'class':'matches__item matches__link'})
-    match_index_counter = 0
+    match_index_counter = 0 # counter to correlate which match relates to the position in match_info
 
+    # Loops through every date and for every date find the information of the matches on that date
+    # Uses the amount of matches per day and the match_index_counter to correlate which matches take place on which days
     for i in range(len(dates)):
         for j in range(matches_per_day[i]):
+            # Finds the match currently being iterated on per day
             target_match = match_info[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
             teams = [team.text.strip() for team in target_match]
 
+            # Finds the match time for the current match
             match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
             time = match_time.text.strip()
 
             match_index_counter += 1
 
-            df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time]
+            df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time] # enters the data into the data frame
 
     print(df) #TEST
 
