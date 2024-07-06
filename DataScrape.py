@@ -39,7 +39,7 @@ def get_table_data(page_data):
 
     print(df) # TEST
 
-def get_fixture_data(page_data):
+def get_fixture_data(page_data, team_fixtures):
     '''
     Searches the page and finds and store the fixture data into a data frame
     '''
@@ -48,6 +48,11 @@ def get_fixture_data(page_data):
     dates = page_data.find_all('h4')
     dates_text = [date.text.strip() for date in dates]
 
+    if (team_fixtures):
+        fixture_type = page_data.find_all('h5')
+        fixture_type_text = [fix.text.strip() for fix in fixture_type]
+
+
     fix = page_data.find('div',{'class':'fixres__body'}) # Entire fixture list
     matches_per_day = []
     for i in range(len(dates)):
@@ -55,7 +60,10 @@ def get_fixture_data(page_data):
         matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
 
     # Create the data frame to store the data
-    column_names = ['Match Date','Team 1','Team 2','Time']
+    if not team_fixtures:
+        column_names = ['Match Date','Team 1','Team 2','Time']
+    else:
+        column_names = ['Match Date','Team 1','Team 2','Time','Fixture Type']
     df = pd.DataFrame(columns = column_names)
 
     # Finds the data for all the matches
@@ -74,9 +82,12 @@ def get_fixture_data(page_data):
             match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
             time = match_time.text.strip()
 
-            match_index_counter += 1
+            if not team_fixtures:
+                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time] # enters the data into the data frame
+            else:
+                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time,fixture_type_text[match_index_counter+1]]
 
-            df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time] # enters the data into the data frame
+            match_index_counter += 1
 
     print(df) #TEST
 
@@ -90,13 +101,13 @@ def main():
      'La Liga': 'https://www.skysports.com/la-liga-table/2023'   
     }
     page = requests.get(url_league_dict['Premier League'])
-    page_data = BeautifulSoup(page.text, 'html')
+    page_data = BeautifulSoup(page.text, 'html.parser')
 
 
-    url = 'https://www.skysports.com/premier-league-fixtures'
+    url = 'https://www.skysports.com/manchester-united-fixtures'
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
-    get_fixture_data(page_data)
+    get_fixture_data(page_data, True)
 
 if __name__ == '__main__':
     main()
