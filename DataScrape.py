@@ -42,12 +42,15 @@ def get_table_data(page_data):
 def get_fixture_data(page_data, team_fixtures):
     '''
     Searches the page and finds and store the fixture data into a data frame
+    team_fixtures is a boolean to tell if the search is for a league's fixtures or a specific team
+    team_fixtures = False if looking for a league's fixtures, True if looking for a team's fixtures
     '''
 
     # Finds all of the match dates and stores the text into a list
     dates = page_data.find_all('h4')
     dates_text = [date.text.strip() for date in dates]
 
+    # If looking for fixtures for a specific team
     if (team_fixtures):
         fixture_type = page_data.find_all('h5')
         fixture_type_text = [fix.text.strip() for fix in fixture_type]
