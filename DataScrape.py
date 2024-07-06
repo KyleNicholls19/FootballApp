@@ -88,7 +88,7 @@ def get_fixture_data(page_data, team_fixtures):
             if not team_fixtures:
                 df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time] # enters the data into the data frame
             else:
-                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time,fixture_type_text[match_index_counter+1]]
+                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time,fixture_type_text[match_index_counter+1]] # enters the data into the data frame
 
             match_index_counter += 1
 
