@@ -114,7 +114,7 @@ def main():
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
     test = get_fixture_data(page_data, True)
-    return test.to_json()
-
+    print(test.to_json(orient='index'))
+    return test.to_json(orient='index')
 if __name__ == '__main__':
     app.run(debug=True)

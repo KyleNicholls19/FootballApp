@@ -16,13 +16,16 @@ function App() {
   }, [])
   return (
     <div>
-      {(typeof data.members === 'undefined') ? (
+    {setTimeout(()=> {
+      (typeof data.members === 'undefined') ? (
         <p>Loading...</p>
       ) : (
-        data.members.map((member,i) => (
-          <p key={i}>{member}</p>
+        data.members.map((data,i) => (
+          <p key={i}>{data}</p>
         ))
-      )}
+      )
+    },1000)}
+
     </div>
   )
 }
