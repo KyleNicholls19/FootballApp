@@ -92,8 +92,8 @@ def get_fixture_data(page_data, team_fixtures):
                 df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time,fixture_type_text[match_index_counter+1]] # enters the data into the data frame
 
             match_index_counter += 1
-
-    print(df) #TEST
+    return(df)
+    #print(df) #TEST
 
 app = Flask(__name__)
 @app.route("/members")
@@ -113,8 +113,8 @@ def main():
     url = 'https://www.skysports.com/manchester-united-fixtures'
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
-    get_fixture_data(page_data, True)
-    return {"members":["Member1","Member2","Member3"]}
+    test = get_fixture_data(page_data, True)
+    return test.to_json()
 
 if __name__ == '__main__':
     app.run(debug=True)
