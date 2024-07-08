@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+from flask import Flask
 
 
 def remove_astericks(data):
@@ -94,6 +95,8 @@ def get_fixture_data(page_data, team_fixtures):
 
     print(df) #TEST
 
+app = Flask(__name__)
+@app.route("/test")
 
 def main():
     url_league_dict =  {
@@ -110,7 +113,8 @@ def main():
     url = 'https://www.skysports.com/manchester-united-fixtures'
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
-    get_fixture_data(page_data, True)
+    #get_fixture_data(page_data, True)
+    return "hi"
 
 if __name__ == '__main__':
-    main()
+    app.run(debug=True)
