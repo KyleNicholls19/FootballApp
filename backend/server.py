@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 from flask import Flask
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
 
 
 def remove_astericks(data):
@@ -38,7 +42,7 @@ def get_table_data(page_data):
         length = len(df)
         df.loc[length] = remove_astericks(individual_row_data)
 
-    print(df) # TEST
+    return df 
 
 def get_fixture_data(page_data, team_fixtures):
     '''
@@ -95,10 +99,10 @@ def get_fixture_data(page_data, team_fixtures):
     return(df)
     #print(df) #TEST
 
-app = Flask(__name__)
-@app.route("/members")
 
-def main():
+@app.route("/table")
+
+def run_table_data():
     url_league_dict =  {
      'Premier League':'https://www.skysports.com/premier-league-table/2023',
      'Bundesliga': 'https://www.skysports.com/bundesliga-table/2023',
@@ -109,7 +113,11 @@ def main():
     page = requests.get(url_league_dict['Premier League'])
     page_data = BeautifulSoup(page.text, 'html.parser')
 
+    data = get_table_data(page_data)
+    return data.to_json(orient='index')
 
+
+def main():
     url = 'https://www.skysports.com/manchester-united-fixtures'
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
