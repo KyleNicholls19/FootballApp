@@ -14,10 +14,12 @@ function App() {
     const data = await response.json()
 
     for (const key in data) {
-      console.log('${key}: ${obj[key]}');
+      for (const item in data[key]){
+        console.log(data[key][item])
+      }
     }
 
-    console.log(data)
+    //console.log(data)
   }
 
   return (
