@@ -1,10 +1,12 @@
 import React, { useState,useEffect } from 'react'
 
-function GetTable() {
+function GetTable(props) {
     const [table,setTable] = useState([]);
+    const league = props.league
 
-    async function getTable() {
-      const response = await fetch('http://127.0.0.1:5000/table')
+    async function getTable(league) {
+      const url = 'http://127.0.0.1:5000/table/' + league
+      const response = await fetch(url)
       const data = await response.json()
   
       for (const key in data) {
@@ -18,7 +20,7 @@ function GetTable() {
     }
 
     useEffect(() => {
-        getTable()
+        getTable(league)
     },[])
 
     return(

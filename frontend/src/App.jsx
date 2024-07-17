@@ -7,7 +7,11 @@ function App() {
 
   return (
     <>
-      <GetTable/>
+      <GetTable league={'Bundesliga'}/>
+      <GetTable league={'PremierLeague'}/>
+      <GetTable league={'SerieA'}/>
+      <GetTable league={'Ligue1'}/>
+      <GetTable league={'LaLiga'}/>
     </>
   )
 }
