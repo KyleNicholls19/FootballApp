@@ -100,17 +100,17 @@ def get_fixture_data(page_data, team_fixtures):
     #print(df) #TEST
 
 
-@app.route("/table")
+@app.route("/table/<league_name>")
 
-def run_table_data():
+def run_table_data(league_name):
     url_league_dict =  {
-     'Premier League':'https://www.skysports.com/premier-league-table/2023',
+     'PremierLeague':'https://www.skysports.com/premier-league-table/2023',
      'Bundesliga': 'https://www.skysports.com/bundesliga-table/2023',
-     'Serie A': 'https://www.skysports.com/serie-a-table/2023',
-     'Ligue 1': 'https://www.skysports.com/ligue-1-table/2023',
-     'La Liga': 'https://www.skysports.com/la-liga-table/2023'   
+     'SerieA': 'https://www.skysports.com/serie-a-table/2023',
+     'Ligue1': 'https://www.skysports.com/ligue-1-table/2023',
+     'LaLiga': 'https://www.skysports.com/la-liga-table/2023'   
     }
-    page = requests.get(url_league_dict['Premier League'])
+    page = requests.get(url_league_dict[league_name])
     page_data = BeautifulSoup(page.text, 'html.parser')
 
     data = get_table_data(page_data)
