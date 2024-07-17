@@ -25,8 +25,8 @@ function GetTable(props) {
 
     return(
         <>
-        <div>
-            <h2>League Table</h2>
+        <h2>League Table</h2>
+        <div className='table'>
             <table>
                 <thead>
                     <tr>
