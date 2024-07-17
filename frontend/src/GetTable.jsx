@@ -15,6 +15,7 @@ function GetTable(props) {
 
         
         setTable(t => [...t,newData])
+        
      
       }
     }
