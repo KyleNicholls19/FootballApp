@@ -1,4 +1,4 @@
-import { Anchor, Center, Container, Group } from '@mantine/core';
+import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
 
 function NavBar() {
@@ -18,9 +18,20 @@ function NavBar() {
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
             Fixtures
           </Anchor>
-          <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
-            Tables
-          </Anchor>
+          <Menu>
+            <Menu.Target>
+              <Anchor target="_blank" underline="hover" className='nav-items'>
+              Tables
+              </Anchor>
+            </Menu.Target>
+            <Menu.Dropdown>
+              <Menu.Label>League Tables</Menu.Label>
+              <Menu.Item>Bundesliga</Menu.Item>
+              <Menu.Item>Premier League</Menu.Item>
+              <Menu.Item>La Liga</Menu.Item>
+            </Menu.Dropdown>
+          </Menu>
+
         </Group>
         </Center>
         </Container>
