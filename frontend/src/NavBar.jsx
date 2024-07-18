@@ -1,10 +1,13 @@
 import { Anchor, Center, Container, Group } from '@mantine/core';
 
 function NavBar() {
+    const props = {
+        bg: 'blue'
+    }
     return (
-        <Container fluid h={50}>
+        <Container fluid h={50} {...props}>
         <Center>
-        <Group justify="center">
+        <Group justify="center" className = 'nav-bar'>
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='test'>
             Results
           </Anchor>
