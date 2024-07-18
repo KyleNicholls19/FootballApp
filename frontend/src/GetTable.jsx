@@ -4,9 +4,7 @@ import { useMantineTheme } from '@mantine/core';
 
 function GetTable(props) {
     
-    const {colorScheme} = useMantineTheme();
-    
-
+    const {colorScheme} = useMantineTheme(); 
     const [data,setData] = useState([]);
     const league = props.league
 
@@ -34,6 +32,7 @@ function GetTable(props) {
         {
             accessorKey: 'Pos',
             header: 'Pos',
+            size: 50,
         },
         {
             accessorKey: 'Team',
@@ -42,34 +41,42 @@ function GetTable(props) {
         {
             accessorKey: 'Pl',
             header: 'Pl',
+            size: 50,
         },
         {
             accessorKey: 'W',
             header: 'W',
+            size: 50,
         },
         {
             accessorKey: 'D',
             header: 'D',
+            size: 50,
         },
         {
             accessorKey: 'L',
             header: 'L',
+            size: 50,
         },
         {
             accessorKey: 'F',
             header: 'F',
+            size: 50,
         },
         {
             accessorKey: 'A',
             header: 'A',
+            size: 50,
         },
         {
             accessorKey: 'GD',
             header: 'GD',
+            size: 50,
         },
         {
             accessorKey: 'Pts',
             header: 'Pts',
+            size: 50,
         },
 
     ])
@@ -79,12 +86,17 @@ function GetTable(props) {
         data,
         enableColumnActions: false,
         enableColumnFilters: false,
-        enablePagination: false,    
+        enablePagination: false,  
+        enableFullScreenToggle: false,
+        enableDensityToggle: false,
+        enableHiding: false,
+        enableGlobalFilter:false,
+        initialState: {density: 'sm'},
         mantineTableProps: {
-            highlightOnHover: false,
             withColumnBorders: true,
             withBorder: colorScheme === 'light',
-            sx: {     
+            sx: { 
+
               'thead > tr': {      
                 backgroundColor: 'inherit',      
               },     
@@ -93,12 +105,14 @@ function GetTable(props) {
               },     
               'tbody > tr > td': {      
                 backgroundColor: 'inherit',   
-              },   
+              },
+              maxWidth: '20vw'
+                
             },  
         },    
     });
     return(
-        <MantineReactTable table ={buildTable}/>
+        <MantineReactTable table ={buildTable} />
     );
 
 
