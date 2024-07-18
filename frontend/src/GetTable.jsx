@@ -1,7 +1,7 @@
 import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
-import { Flex, Container } from '@mantine/core';
+import { Flex, Center } from '@mantine/core';
 
 function GetTable(props) {
     
@@ -92,6 +92,8 @@ function GetTable(props) {
         enableDensityToggle: false,
         enableHiding: false,
         enableGlobalFilter:false,
+        enableBottomToolbar:false,
+        enableTopToolbar:false,
         initialState: {density: 'sm'},
         mantineTableProps: {
             withColumnBorders: true,
@@ -117,6 +119,10 @@ function GetTable(props) {
         }    
     });
     return(
+        <>
+        <Center>
+        <h1>{league} Table</h1>
+        </Center>
         <Flex 
         mih={50}
         justify='center'
@@ -125,6 +131,7 @@ function GetTable(props) {
         >
             <MantineReactTable table ={buildTable} />
         </Flex>
+        </>
 
     );
 
