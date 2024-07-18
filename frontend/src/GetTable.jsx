@@ -1,7 +1,13 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useMemo } from 'react'
+import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
+import { useMantineTheme } from '@mantine/core';
 
 function GetTable(props) {
-    const [table,setTable] = useState([]);
+    
+    const {colorScheme} = useMantineTheme();
+    
+
+    const [data,setData] = useState([]);
     const league = props.league
 
     async function getTable(league) {
@@ -14,7 +20,7 @@ function GetTable(props) {
           A: data[key].A,GD: data[key].GD,Pts: data[key].Pts}
 
         
-        setTable(t => [...t,newData])
+        setData(t => [...t,newData])
         
      
       }
@@ -24,45 +30,75 @@ function GetTable(props) {
         getTable(league)
     },[])
 
-    return(
-        <>
-        <h2>League Table</h2>
-        <div className='table'>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pos</th>
-                        <th>Team</th>
-                        <th>Pl</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>F</th>
-                        <th>A</th>
-                        <th>GD</th>
-                        <th>Pts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {table.map((team) => (
-                        <tr key={team.Pos}>
-                        <td>{team.Pos}</td>
-                        <td>{team.Team}</td>
-                        <td>{team.Pl}</td>
-                        <td>{team.W}</td>
-                        <td>{team.D}</td>
-                        <td>{team.L}</td>
-                        <td>{team.F}</td>
-                        <td>{team.A}</td>
-                        <td>{team.GD}</td>
-                        <td>{team.Pts}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-        </>
+    const columns = useMemo(() => [
+        {
+            accessorKey: 'Pos',
+            header: 'Pos',
+        },
+        {
+            accessorKey: 'Team',
+            header: 'Team',
+        },
+        {
+            accessorKey: 'Pl',
+            header: 'Pl',
+        },
+        {
+            accessorKey: 'W',
+            header: 'W',
+        },
+        {
+            accessorKey: 'D',
+            header: 'D',
+        },
+        {
+            accessorKey: 'L',
+            header: 'L',
+        },
+        {
+            accessorKey: 'F',
+            header: 'F',
+        },
+        {
+            accessorKey: 'A',
+            header: 'A',
+        },
+        {
+            accessorKey: 'GD',
+            header: 'GD',
+        },
+        {
+            accessorKey: 'Pts',
+            header: 'Pts',
+        },
 
+    ])
+
+    const buildTable = useMantineReactTable({
+        columns,
+        data,
+        enableColumnActions: false,
+        enableColumnFilters: false,
+        enablePagination: false,    
+        mantineTableProps: {
+            highlightOnHover: false,
+            withColumnBorders: true,
+            withBorder: colorScheme === 'light',
+            sx: {     
+              'thead > tr': {      
+                backgroundColor: 'inherit',      
+              },     
+              'thead > tr > th': {      
+                backgroundColor: 'inherit',     
+              },     
+              'tbody > tr > td': {      
+                backgroundColor: 'inherit',   
+              },   
+            },  
+        },    
+    });
+    return(
+        <MantineReactTable table ={buildTable}/>
     );
 
 

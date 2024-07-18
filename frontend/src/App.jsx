@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import GetTable2 from './GetTable2.jsx'
+import GetTable from './GetTable.jsx'
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <GetTable2 league={'Bundesliga'}/>
+      <GetTable league={'Bundesliga'}/>
     </>
   )
 }
