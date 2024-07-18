@@ -1,6 +1,7 @@
 import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
-import { useMantineTheme } from '@mantine/core';
+import { MantineProvider, useMantineTheme } from '@mantine/core';
+import { Container } from '@mantine/core';
 
 function GetTable(props) {
     
@@ -109,10 +110,17 @@ function GetTable(props) {
               maxWidth: '20vw'
                 
             },  
-        },    
+        },
+        mantinePaperProps: {
+            shadow: 'lg',
+            borderRadius: '0',
+        }    
     });
     return(
-        <MantineReactTable table ={buildTable} />
+        <Container size='55rem'>
+            <MantineReactTable table ={buildTable} />
+        </Container>
+
     );
 
 
