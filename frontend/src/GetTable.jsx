@@ -1,7 +1,7 @@
 import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
-import { Container } from '@mantine/core';
+import { Flex, Container } from '@mantine/core';
 
 function GetTable(props) {
     
@@ -117,9 +117,14 @@ function GetTable(props) {
         }    
     });
     return(
-        <Container size='55rem'>
+        <Flex 
+        mih={50}
+        justify='center'
+        align='center'
+        wrap='wrap'
+        >
             <MantineReactTable table ={buildTable} />
-        </Container>
+        </Flex>
 
     );
 
