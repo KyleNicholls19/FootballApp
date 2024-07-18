@@ -18,7 +18,7 @@ function NavBar() {
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
             Fixtures
           </Anchor>
-          <Menu>
+          <Menu withArrow offset={0} transitionProps={{transition: 'pop',duration:150}}>
             <Menu.Target>
               <Anchor target="_blank" underline="hover" className='nav-items'>
               Tables
