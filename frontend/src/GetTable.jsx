@@ -116,7 +116,8 @@ function GetTable(props) {
         mantinePaperProps: {
             shadow: 'lg',
             borderRadius: '0',
-        }    
+        }   
+         
     });
     return(
         <>
