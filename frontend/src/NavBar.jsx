@@ -24,7 +24,7 @@ function NavBar() {
             <Menu.Dropdown>
               <Menu.Label>League Tables</Menu.Label>
               {names.map((item) => (
-                <Menu.Item component={Link} to={`/table/${item.url}`}>{item.display}</Menu.Item>
+                <Menu.Item component={Link} to={`/table/${item.url}`} key={item.url} reloadDocument>{item.display}</Menu.Item>
               ))}
             </Menu.Dropdown>
           </Menu>

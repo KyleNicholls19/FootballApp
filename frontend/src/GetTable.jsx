@@ -4,6 +4,7 @@ import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
 import NavBar from './NavBar.jsx';
 import { useParams } from 'react-router-dom';
+import {names} from './NameConversion.json'
 
 function GetTable() {
     
@@ -84,7 +85,8 @@ function GetTable() {
 
     ])
 
-    const buildTable = useMantineReactTable({
+    const buildTable = useMantineReactTable(
+        {
         columns,
         data,
         enableColumnActions: false,
@@ -121,11 +123,17 @@ function GetTable() {
         }   
          
     });
+
+    const displayName = () =>{
+        const name = names.find((item) => item.url === params.leagueName)
+
+        return name.display
+    }
     return(
         <>
         <NavBar/>
         <Center>
-        <h1>{params.leagueName} Table</h1>
+        <h1>{displayName()} Table</h1>
         </Center>
         <Flex 
         mih={50}
