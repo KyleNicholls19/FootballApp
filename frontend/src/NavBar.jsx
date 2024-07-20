@@ -1,14 +1,8 @@
 import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
-import { useMantineTheme } from '@mantine/core';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 
-  function handleRoute(leagueName) {
-    const navigate = useNavigate();
-    const url = '/table/'+leagueName
-    navigate(url)
-  }
 
     return (
         <Container fluid h={50} >
