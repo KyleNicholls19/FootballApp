@@ -30,7 +30,11 @@ function GetTable() {
 
     useEffect(() => {
         getTable(params.leagueName)
-    },[])
+        // clears the data after creating the table
+        return (
+            setData([])
+        )
+    },[params.leagueName])
 
     const columns = useMemo(() => [
         {
