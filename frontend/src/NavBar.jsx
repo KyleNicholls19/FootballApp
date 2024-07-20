@@ -2,11 +2,6 @@ import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
 
 function NavBar() {
-    const theme = useMantineTheme(); 
-    const props = {
-        
-    }
-
 
     return (
         <Container fluid h={50} {...props}>

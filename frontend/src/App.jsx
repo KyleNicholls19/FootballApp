@@ -9,10 +9,8 @@ function App() {
 
   return (
     <>
-      <MantineProvider defaultColorScheme='auto'>
-        <NavBar/>
-        <GetTable league={'Bundesliga'}/>
-      </MantineProvider>
+      
+      
     </>
   )
 }
