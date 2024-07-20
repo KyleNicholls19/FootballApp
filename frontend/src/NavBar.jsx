@@ -1,5 +1,6 @@
 import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
 import { Link } from 'react-router-dom';
+import {names} from './NameConversion.json'
 
 function NavBar() {
 
@@ -22,9 +23,9 @@ function NavBar() {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>League Tables</Menu.Label>
-              <Menu.Item component={Link} to='/table/Bundesliga'>Bundesliga</Menu.Item>
-              <Menu.Item>Premier League</Menu.Item>
-              <Menu.Item>La Liga</Menu.Item>
+              {names.map((item) => (
+                <Menu.Item component={Link} to={`/table/${item.url}`}>{item.display}</Menu.Item>
+              ))}
             </Menu.Dropdown>
           </Menu>
 

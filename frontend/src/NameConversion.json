@@ -1,0 +1,8 @@
+{
+    "names": [
+        {"display":"Bundesliga","url":"bundesliga"},
+        {"display":"Premier League","url":"premier-league"},
+        {"display":"La Liga","url":"la-liga"}
+    ]
+}
+
