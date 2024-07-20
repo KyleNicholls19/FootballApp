@@ -3,12 +3,13 @@ import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
 import NavBar from './NavBar.jsx';
+import { useParams } from 'react-router-dom';
 
-function GetTable(props) {
+function GetTable() {
     
     const {colorScheme} = useMantineTheme(); 
     const [data,setData] = useState([]);
-    const league = props.league
+    const params = useParams();
 
     async function getTable(league) {
       const url = 'http://127.0.0.1:5000/table/' + league
@@ -27,7 +28,7 @@ function GetTable(props) {
     }
 
     useEffect(() => {
-        getTable(league)
+        getTable(params.leagueName)
     },[])
 
     const columns = useMemo(() => [
@@ -124,7 +125,7 @@ function GetTable(props) {
         <>
         <NavBar/>
         <Center>
-        <h1>{league} Table</h1>
+        <h1>{params.leagueName} Table</h1>
         </Center>
         <Flex 
         mih={50}

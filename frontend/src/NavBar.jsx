@@ -1,5 +1,6 @@
 import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 
@@ -21,7 +22,7 @@ function NavBar() {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>League Tables</Menu.Label>
-              <Menu.Item>Bundesliga</Menu.Item>
+              <Menu.Item onClick={() => handleRoute('Bundesliga')}>Bundesliga</Menu.Item>
               <Menu.Item>Premier League</Menu.Item>
               <Menu.Item>La Liga</Menu.Item>
             </Menu.Dropdown>

@@ -5,6 +5,7 @@ import './index.css'
 import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 import Home from './Home.jsx'
 import PageNotFound from './PageNotfound.jsx'
+import GetTable from './GetTable.jsx'
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     element: <Home/>,
     errorElement: <PageNotFound/>,
   },
+  {
+    path: '/table/:leagueName',
+    element: <GetTable/>
+  }
 ]); 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
