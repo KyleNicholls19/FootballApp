@@ -1,8 +1,14 @@
 import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function NavBar() {
+
+  function handleRoute(leagueName) {
+    const navigate = useNavigate();
+    const url = '/table/'+leagueName
+    navigate(url)
+  }
 
     return (
         <Container fluid h={50} >
@@ -22,7 +28,7 @@ function NavBar() {
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>League Tables</Menu.Label>
-              <Menu.Item onClick={() => handleRoute('Bundesliga')}>Bundesliga</Menu.Item>
+              <Menu.Item component={Link} to='/table/Bundesliga'>Bundesliga</Menu.Item>
               <Menu.Item>Premier League</Menu.Item>
               <Menu.Item>La Liga</Menu.Item>
             </Menu.Dropdown>
