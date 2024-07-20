@@ -4,7 +4,7 @@ import { useMantineTheme } from '@mantine/core';
 function NavBar() {
 
     return (
-        <Container fluid h={50} {...props}>
+        <Container fluid h={50} >
         <Center>
         <Group justify="center">
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>

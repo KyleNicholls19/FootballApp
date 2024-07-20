@@ -2,6 +2,7 @@ import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
+import NavBar from './NavBar.jsx';
 
 function GetTable(props) {
     
@@ -121,6 +122,7 @@ function GetTable(props) {
     });
     return(
         <>
+        <NavBar/>
         <Center>
         <h1>{league} Table</h1>
         </Center>
