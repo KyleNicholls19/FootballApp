@@ -1,6 +1,7 @@
-import { Anchor, Center, Container, Group, Menu } from '@mantine/core';
+import { Anchor, Center, Container, Group, Menu, ActionIcon } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import {names} from './NameConversion.json'
+import {IconHome} from '@tabler/icons-react'
 
 function NavBar() {
 
@@ -8,7 +9,10 @@ function NavBar() {
     return (
         <Container fluid h={50} >
         <Center>
-        <Group justify="center">
+        <Group justify="center" spacing='xl'>
+        <ActionIcon variant='hover' component={Link} to='/'>
+        <IconHome></IconHome>
+        </ActionIcon>       
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
             Results
           </Anchor>
