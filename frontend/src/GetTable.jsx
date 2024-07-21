@@ -2,21 +2,23 @@ import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
-import NavBar from './NavBar.jsx';
+import Navbar from './Navbar.jsx';
 import { useParams } from 'react-router-dom';
 import {names} from './NameConversion.json'
 
 function GetTable() {
     
     const {colorScheme} = useMantineTheme(); 
-    const [data,setData] = useState([]);
-    const params = useParams();
+    const [data,setData] = useState([]); // state variable to store table data
+    const params = useParams(); // takes in the league name from the url as a parameter
 
     async function getTable(league) {
+      // gathers the data from the backend and turns it to json form
       const url = 'http://127.0.0.1:5000/table/' + league
       const response = await fetch(url)
       const data = await response.json()
-  
+
+      // reformates the json data to a more useable form  
       for (const key in data) {
         const newData = {Pos: Object.values(data[key])[0], Team: data[key].Team, Pl: data[key].Pl,W: data[key].W,D: data[key].D,L: data[key].L,F: data[key].F,
           A: data[key].A,GD: data[key].GD,Pts: data[key].Pts}
@@ -36,6 +38,7 @@ function GetTable() {
         )
     },[params.leagueName])
 
+    // creates the columns needed in the table
     const columns = useMemo(() => [
         {
             accessorKey: 'Pos',
@@ -89,6 +92,7 @@ function GetTable() {
 
     ])
 
+    // creates the table itself with all data
     const buildTable = useMantineReactTable(
         {
         columns,
@@ -128,6 +132,7 @@ function GetTable() {
          
     });
 
+    // finds the display name of the league from the url name to display on top of the table
     const displayName = () =>{
         const name = names.find((item) => item.url === params.leagueName)
 
@@ -135,7 +140,7 @@ function GetTable() {
     }
     return(
         <>
-        <NavBar/>
+        <Navbar/>
         <Center>
         <h1>{displayName()} Table</h1>
         </Center>

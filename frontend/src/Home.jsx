@@ -1,8 +1,8 @@
-import NavBar from "./NavBar.jsx"
+import Navbar from "./Navbar.jsx"
 function Home() {
     return(
         <>
-        <NavBar/>
+        <Navbar/>
         <h2>HOME</h2>
         </>
     )

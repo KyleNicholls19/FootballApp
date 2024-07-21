@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import {names} from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
 
-function NavBar() {
-
-
+function Navbar() {
+/*
+Creates the navigation bar with functionality to reroute user to different parts of the webpage
+General use navbar to be displayed on multiple parts of the site
+*/
     return (
         <Container fluid h={50} >
         <Center>
@@ -41,4 +43,4 @@ function NavBar() {
 }
 
 
-export default NavBar
+export default Navbar
