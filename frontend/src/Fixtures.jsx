@@ -31,18 +31,19 @@ function Fixtures() {
         )
     },[params.name])
 
-    let MatchDateList = []
+    const [MatchDateList,setMatchDateList] = useState([])
     return(
         <>
         <Navbar></Navbar>
         <Link to={`../table/${params.name}`}>Table</Link>
         <ul>
         {data.map((item) => {
+            {!MatchDateList.includes(item.MatchDate) &&(
+                <h1>{item.MatchDate}</h1>,
+                setMatchDateList(m => [...m,item.MatchDate])
+            )}
             <li>{item.Team1} vs {item.Team2} at {item.Time}</li>
-            if (!MatchDateList.includes(item.MatchDate)){
-                <h1>{item.MatchDate}</h1>
-                MatchDateList.push(item.MatchDate)
-            }
+            
 
 
         })}
