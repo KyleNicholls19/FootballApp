@@ -1,6 +1,7 @@
 import Home from './Home.jsx'
 import PageNotFound from './PageNotFound.jsx'
 import GetTable from './GetTable.jsx'
+import Fixtures from './Fixtures.jsx'
 import {createBrowserRouter} from 'react-router-dom'
 
 
@@ -16,6 +17,10 @@ function Routes() {
         {
             path: '/table/:leagueName',
             element: <GetTable/>
+        },
+        {
+            path: '/fixtures/:isLeague/:name',
+            element: <Fixtures/>
         }
     ])
 }

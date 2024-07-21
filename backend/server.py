@@ -97,7 +97,6 @@ def get_fixture_data(page_data, team_fixtures):
 
             match_index_counter += 1
     return(df)
-    #print(df) #TEST
 
 
 @app.route("/table/<league_name>")
@@ -114,6 +113,22 @@ def run_table_data(league_name):
     page_data = BeautifulSoup(page.text, 'html.parser')
 
     data = get_table_data(page_data)
+    return data.to_json(orient='index')
+
+@app.route('/fixtures/<league>/<name>')
+def run_fixture_data(league,name):
+    url_league_dict = {
+        'premier-league': 'https://www.skysports.com/premier-league-fixtures',
+        'bundesliga': 'https://www.skysports.com/bundesliga-fixtures',
+        'serie-a': 'https://www.skysports.com/serie-a-fixtures',
+    }
+    team_fixtures = True
+    if league == 'league':
+        team_fixtures = False
+
+    page = requests.get(url_league_dict[name])
+    page_data = BeautifulSoup(page.text, 'html.parser')
+    data = get_fixture_data(page_data, team_fixtures)
     return data.to_json(orient='index')
 
 
