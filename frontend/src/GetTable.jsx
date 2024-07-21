@@ -3,7 +3,7 @@ import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
 import Navbar from './Navbar.jsx';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import {names} from './NameConversion.json'
 
 function GetTable() {
@@ -143,6 +143,7 @@ function GetTable() {
         <Navbar/>
         <Center>
         <h1>{displayName()} Table</h1>
+        <Link to={`../fixtures/league/${params.leagueName}`}>Fixtures</Link>
         </Center>
         <Flex 
         mih={50}

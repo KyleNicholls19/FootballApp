@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect,useMemo } from 'react'
 import Navbar from './Navbar.jsx';
 
@@ -34,6 +34,8 @@ function Fixtures() {
 
     return(
         <>
+        <Navbar></Navbar>
+        <Link to={`../table/${params.name}`}>Table</Link>
         <ul>
         {data.map((item) => (
             <li>Match Date: {item.MatchDate}, {item.Team1} vs {item.Team2} at {item.Time}</li>
