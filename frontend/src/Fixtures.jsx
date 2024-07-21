@@ -21,7 +21,7 @@ function Fixtures() {
         }
 
     }
-    console.log(data)
+
 
     useEffect(() => {
         getFixtures(isLeague,params.name)
@@ -31,16 +31,21 @@ function Fixtures() {
         )
     },[params.name])
 
-
+    let MatchDateList = []
     return(
         <>
         <Navbar></Navbar>
         <Link to={`../table/${params.name}`}>Table</Link>
         <ul>
-        {data.map((item) => (
-            <li>Match Date: {item.MatchDate}, {item.Team1} vs {item.Team2} at {item.Time}</li>
+        {data.map((item) => {
+            <li>{item.Team1} vs {item.Team2} at {item.Time}</li>
+            if (!MatchDateList.includes(item.MatchDate)){
+                <h1>{item.MatchDate}</h1>
+                MatchDateList.push(item.MatchDate)
+            }
 
-        ))}
+
+        })}
         </ul>
         
         </>
