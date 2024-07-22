@@ -123,17 +123,14 @@ def run_table_data(league_name):
 
 @app.route('/fixtures/<league>/<name>')
 def run_fixture_data(league,name):
-    url_league_dict = {
-        'premier-league': 'https://www.skysports.com/premier-league-fixtures',
-        'bundesliga': 'https://www.skysports.com/bundesliga-fixtures',
-        'serie-a': 'https://www.skysports.com/serie-a-fixtures',
-        'la-liga': 'https://www.skysports.com/la-liga-fixtures',
-    }
+
+    url =f'https://www.skysports.com/{name}-fixtures'
     team_fixtures = True
     if league == 'league':
         team_fixtures = False
 
-    page = requests.get(url_league_dict[name])
+
+    page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
     data = get_fixture_data(page_data, team_fixtures)
     return data.to_json(orient='index')
