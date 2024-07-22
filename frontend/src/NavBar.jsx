@@ -1,9 +1,11 @@
-import { Anchor, Center, Container, Group, Menu, ActionIcon } from '@mantine/core';
+import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import {names} from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
+import { useDisclosure } from '@mantine/hooks';
 
 function Navbar() {
+  
 /*
 Creates the navigation bar with functionality to reroute user to different parts of the webpage
 General use navbar to be displayed on multiple parts of the site
@@ -18,9 +20,14 @@ General use navbar to be displayed on multiple parts of the site
           <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
             Results
           </Anchor>
-          <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
-            Fixtures
+
+
+          
+          <Anchor component={Link} to={'/fixtures/league/premier-league'} underline="hover" className='nav-items'>
+          Fixtures
           </Anchor>
+
+
           <Menu withArrow offset={0} transitionProps={{transition: 'pop',duration:150}}>
             <Menu.Target>
               <Anchor target="_blank" underline="hover" className='nav-items'>
