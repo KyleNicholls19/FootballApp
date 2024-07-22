@@ -69,7 +69,9 @@ function Fixtures() {
         label="Competitions"
         childrenOffset={28}
         >
-            <Link to={'/fixtures/league/bundesliga'}>Premier League</Link>
+            {names.map((item) => (
+                <NavLink component={Link} to={`/fixtures/league/${item.url}`} key={item.url} label={item.display}/>
+              ))}
 
         </NavLink>
         <Link to={`../table/${params.name}`}>Table</Link>
