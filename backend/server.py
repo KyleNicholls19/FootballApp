@@ -65,7 +65,11 @@ def get_fixture_data(page_data, team_fixtures):
     matches_per_day = []
     for i in range(len(dates)):
         # Splits the fixtures by date and counts how many fixtures are on each date
-        matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
+        if i < len(dates)-1:
+
+            matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].count('<div class="fixres__item">'))
+        else:
+            matches_per_day.append(fix.prettify().split('<h4 class="fixres__header2">')[i+1].split('<script data-role="load-more-content" type="text/show-more">')[0].count('<div class="fixres__item">'))
 
     # Create the data frame to store the data
     if not team_fixtures:
@@ -78,16 +82,18 @@ def get_fixture_data(page_data, team_fixtures):
     match_info = page_data.find_all('a',{'class':'matches__item matches__link'})
     match_index_counter = 0 # counter to correlate which match relates to the position in match_info
 
+
+
     # Loops through every date and for every date find the information of the matches on that date
     # Uses the amount of matches per day and the match_index_counter to correlate which matches take place on which days
     for i in range(len(dates)):
         for j in range(matches_per_day[i]):
             # Finds the match currently being iterated on per day
-            target_match = match_info[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
+            target_match = match_info[199].find_all('span',{'class':'swap-text__target'})[:2]
             teams = [team.text.strip() for team in target_match]
 
             # Finds the match time for the current match
-            match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
+            match_time = match_info[199].find('span',{'class':'matches__date'})
             time = match_time.text.strip()
 
             if not team_fixtures:

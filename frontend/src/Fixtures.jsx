@@ -1,7 +1,7 @@
 import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect,useMemo } from 'react'
 import Navbar from './Navbar.jsx';
-import { Flex, Center,Group } from '@mantine/core';
+import { Flex, Center,Group,NavLink } from '@mantine/core';
 import {names} from './NameConversion.json'
 
 function Fixtures() {
@@ -64,6 +64,14 @@ function Fixtures() {
     return(
         <>
         <Navbar></Navbar>
+        <NavLink        
+        href="#required-for-focus"
+        label="Competitions"
+        childrenOffset={28}
+        >
+            <Link to={'/fixtures/league/bundesliga'}>Premier League</Link>
+
+        </NavLink>
         <Link to={`../table/${params.name}`}>Table</Link>
         <Center>
         <Flex direction='column' align='center'>
@@ -71,8 +79,6 @@ function Fixtures() {
         {Group()}
         </Flex>
         </Center>
-        
-        
         </>
 
     )
