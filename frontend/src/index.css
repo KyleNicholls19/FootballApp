@@ -1,3 +1,7 @@
 .nav-items{
     color: black;
 }
+.match-date{
+    background-color: rgb(150, 55, 238);
+    text-align: center;
+}

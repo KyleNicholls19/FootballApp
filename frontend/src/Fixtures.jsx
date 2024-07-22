@@ -1,6 +1,7 @@
 import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect,useMemo } from 'react'
 import Navbar from './Navbar.jsx';
+import { Flex, Center,Group } from '@mantine/core';
 
 function Fixtures() {
     const params = useParams()
@@ -41,13 +42,13 @@ function Fixtures() {
  
                 return (
                 <>
-                <h1 key={item.MatchDate}>{item.MatchDate}</h1>
-                <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} vs {item.Team2} at {item.Time}</p>
+                <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
+                <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} {item.Time} {item.Team2}</p>
                 </>
                 )
                 
             }
-            return <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} vs {item.Team2} at {item.Time}</p>
+            return <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} {item.Time} {item.Team2}</p>
     
         }))
  
@@ -59,8 +60,11 @@ function Fixtures() {
         <>
         <Navbar></Navbar>
         <Link to={`../table/${params.name}`}>Table</Link>
-        
+        <Center>
+        <Flex direction='column' align='center'>
         {Group()}
+        </Flex>
+        </Center>
         
         
         </>
