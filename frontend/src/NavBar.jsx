@@ -21,12 +21,9 @@ General use navbar to be displayed on multiple parts of the site
             Results
           </Anchor>
 
-
-          
           <Anchor component={Link} to={'/fixtures/league/premier-league'} underline="hover" className='nav-items'>
           Fixtures
           </Anchor>
-
 
           <Menu withArrow offset={0} transitionProps={{transition: 'pop',duration:150}}>
             <Menu.Target>

@@ -2,6 +2,7 @@ import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect,useMemo } from 'react'
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group } from '@mantine/core';
+import {names} from './NameConversion.json'
 
 function Fixtures() {
     const params = useParams()
@@ -54,7 +55,11 @@ function Fixtures() {
  
     }
 
+    const displayName = () =>{
+        const name = names.find((item) => item.url === params.name)
 
+        return name.display
+    }
 
     return(
         <>
@@ -62,6 +67,7 @@ function Fixtures() {
         <Link to={`../table/${params.name}`}>Table</Link>
         <Center>
         <Flex direction='column' align='center'>
+        <h1>{displayName()} Fixtures</h1>
         {Group()}
         </Flex>
         </Center>
