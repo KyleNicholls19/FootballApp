@@ -2,7 +2,7 @@ import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group,NavLink } from '@mantine/core';
-import {names} from './NameConversion.json'
+import {names,PremierLeagueTeams} from './NameConversion.json'
 
 function LeagueFixtures() {
     const params = useParams()
@@ -69,6 +69,16 @@ function LeagueFixtures() {
         >
             {names.map((item) => (
                 <NavLink component={Link} to={`/fixtures/league/${item.url}`} key={item.url} label={item.display}/>
+              ))}
+
+        </NavLink>
+        <NavLink        
+        href="#required-for-focus"
+        label="Teams"
+        childrenOffset={28}
+        >
+            {PremierLeagueTeams.map((item) => (
+                <NavLink component={Link} to={`/fixtures/team/${item.url}`} key={item.url} label={item.display}/>
               ))}
 
         </NavLink>

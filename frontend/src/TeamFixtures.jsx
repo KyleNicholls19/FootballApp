@@ -1,6 +1,7 @@
 import { useParams,Link } from 'react-router-dom';
-import {PremierLeagueTeams} from './NameConversion.json'
+import {PremierLeagueTeams,names} from './NameConversion.json'
 import React, { useState,useEffect } from 'react'
+import { Flex, Center,Group,NavLink } from '@mantine/core';
 import Navbar from './Navbar.jsx';
 
 function TeamFixtures() {
@@ -39,6 +40,29 @@ function TeamFixtures() {
     return(
         <>
         <Navbar></Navbar>
+
+        <NavLink        
+        href="#required-for-focus"
+        label="Competitions"
+        childrenOffset={28}
+        >
+            {names.map((item) => (
+                <NavLink component={Link} to={`/fixtures/league/${item.url}`} key={item.url} label={item.display}/>
+              ))}
+
+        </NavLink>
+        <NavLink        
+        href="#required-for-focus"
+        label="Teams"
+        childrenOffset={28}
+        >
+            {PremierLeagueTeams.map((item) => (
+                <NavLink component={Link} to={`/fixtures/team/${item.url}`} key={item.url} label={item.display}/>
+              ))}
+
+        </NavLink>
+
+        
         {data.map((item) => (
             <>
             <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
@@ -46,6 +70,7 @@ function TeamFixtures() {
             </>
             
         ))}
+
 
         
         </>
