@@ -41,28 +41,8 @@ function TeamFixtures() {
         <>
         <Navbar></Navbar>
 
-        <NavLink        
-        href="#required-for-focus"
-        label="Competitions"
-        childrenOffset={28}
-        >
-            {names.map((item) => (
-                <NavLink component={Link} to={`/fixtures/league/${item.url}`} key={item.url} label={item.display}/>
-              ))}
-
-        </NavLink>
-        <NavLink        
-        href="#required-for-focus"
-        label="Teams"
-        childrenOffset={28}
-        >
-            {PremierLeagueTeams.map((item) => (
-                <NavLink component={Link} to={`/fixtures/team/${item.url}`} key={item.url} label={item.display}/>
-              ))}
-
-        </NavLink>
-
-        
+        <Flex direction='column' align='center'>
+        <h1>{displayName()}'s Fixtures</h1>
         {data.map((item) => (
             <>
             <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
@@ -70,6 +50,7 @@ function TeamFixtures() {
             </>
             
         ))}
+        </Flex>
 
 
         

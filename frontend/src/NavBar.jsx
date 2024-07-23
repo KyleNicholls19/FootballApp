@@ -14,7 +14,7 @@ General use navbar to be displayed on multiple parts of the site
       <>
 
       
-      <Flex direction='row' style={{width: '100%'}}justify='center' align='flex-start'>
+      <Flex direction='row' style={{width: '100%',backgroundColor:'violet',position:'fixed',top:'0',left:'0',zIndex:'999'}}justify='center' align='flex-start' gap='xl'>
         <ActionIcon variant='hover' component={Link} to='/'>
         <IconHome></IconHome>
         </ActionIcon> 
@@ -26,7 +26,7 @@ General use navbar to be displayed on multiple parts of the site
         <Menu.Dropdown>
           <Menu.Label>Main menu</Menu.Label>
           <Menu.Item>
-          <Menu trigger="hover" openDelay={100} closeDelay={400}>
+          <Menu trigger="hover" openDelay={100} closeDelay={400} position='right-start' withArrow offset={10}>
             <Menu.Target>
               <div>Premier League</div>
             </Menu.Target>

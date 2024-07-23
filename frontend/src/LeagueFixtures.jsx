@@ -62,26 +62,7 @@ function LeagueFixtures() {
     return(
         <>
         <Navbar></Navbar>
-        <NavLink        
-        href="#required-for-focus"
-        label="Competitions"
-        childrenOffset={28}
-        >
-            {names.map((item) => (
-                <NavLink component={Link} to={`/fixtures/league/${item.url}`} key={item.url} label={item.display}/>
-              ))}
 
-        </NavLink>
-        <NavLink        
-        href="#required-for-focus"
-        label="Teams"
-        childrenOffset={28}
-        >
-            {PremierLeagueTeams.map((item) => (
-                <NavLink component={Link} to={`/fixtures/team/${item.url}`} key={item.url} label={item.display}/>
-              ))}
-
-        </NavLink>
         <Link to={`../table/${params.name}`}>Table</Link>
         <Center>
         <Flex direction='column' align='center'>
