@@ -1,8 +1,7 @@
-import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover } from '@mantine/core';
+import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover ,NavLink} from '@mantine/core';
 import { Link } from 'react-router-dom';
-import {names} from './NameConversion.json'
+import {names,PremierLeagueTeams} from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
-import { useDisclosure } from '@mantine/hooks';
 
 function Navbar() {
   
@@ -17,9 +16,25 @@ General use navbar to be displayed on multiple parts of the site
         <ActionIcon variant='hover' component={Link} to='/'>
         <IconHome></IconHome>
         </ActionIcon>       
-          <Anchor href="https://mantine.dev/" target="_blank" underline="hover" className='nav-items'>
-            Results
-          </Anchor>
+          <NavLink
+            href="#required-for-focus"
+            label="Fixtures"
+            childrenOffset={3}>
+
+          <NavLink
+          href="#required-for-focus"
+          label="Premier League"
+          childrenOffset={28}
+          >
+            <NavLink component={Link} to={'/fixtures/league/premier-league'} label='All Premier League Fixtures'/>
+
+            {PremierLeagueTeams.map((item) => (
+              <NavLink component={Link} to={`/fixtures/team/${item.url}`} key={item.url} label={item.display}/>
+            ))}
+
+
+          </NavLink>
+          </NavLink>
 
           <Anchor component={Link} to={'/fixtures/league/premier-league'} underline="hover" className='nav-items'>
           Fixtures
