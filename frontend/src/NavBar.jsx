@@ -1,6 +1,6 @@
 import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover ,NavLink,Flex,Box,Button, ScrollArea } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import {names,teams} from './NameConversion.json'
+import data from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
 
 function Navbar() {
@@ -26,20 +26,20 @@ General use navbar to be displayed on multiple parts of the site
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Label>Main menu</Menu.Label>
-          {names.map((item) => {
+          {(data.names).map((item) => {
+            console.log('hello');
 
           <Menu.Item>
           <Menu trigger="hover" openDelay={100} closeDelay={400} position='right-start' withArrow offset={10}>
             <Menu.Target>
               <div>{item.display}</div>
             </Menu.Target>
-            {console.log(teams[item])}
             <Menu.Dropdown>
               <Menu.Label>Teams</Menu.Label>
               <ScrollArea h={400}>
               <Menu.Item component={Link} to={`/fixtures/league/${item.url}`}>All {item.display} Fixtures</Menu.Item>
-              {(teams[item.url]).map((item2) => (
-                <Menu.Item component={Link} to={`/fixtures/team/${item2.url}`} key={item2.url}>{item2.display}</Menu.Item>
+              {(data[item.url]).map((item2) => (
+                <Menu.Item component={Link} to={`/fixtures/team/${item.url}/${item2.url}`} key={item2.url}>{item2.display}</Menu.Item>
               ))}
               </ScrollArea>
             </Menu.Dropdown>
@@ -59,7 +59,7 @@ General use navbar to be displayed on multiple parts of the site
             </Menu.Target>
             <Menu.Dropdown>
               <Menu.Label>League Tables</Menu.Label>
-              {names.map((item) => (
+              {data.names.map((item) => (
                 <Menu.Item component={Link} to={`/table/${item.url}`} key={item.url}>{item.display}</Menu.Item>
               ))}
             </Menu.Dropdown>

@@ -4,33 +4,73 @@
         {"display":"Premier League","url":"premier-league"},
         {"display":"La Liga","url":"la-liga"}
     ],
-    "teams": [
-        { 
-        "premier-league":[
-            {"display":"Arsenal","url":"arsenal"},
-            {"display":"Aston Villa","url":"aston-villa"},
-            {"display":"Bournemouth","url":"bournemouth"},
-            {"display":"Brentford","url":"brentford"},
-            {"display":"Brighton And Hove Albion","url":"brighton-and-hove-albion"},
-            {"display":"Chelsea","url":"chelsea"},
-            {"display":"Crystal Palace","url":"crystal-palace"},
-            {"display":"Everton","url":"everton"},
-            {"display":"Fulham","url":"fulham"},
-            {"display":"Ipswich Town","url":"ipswich-town"},
-            {"display":"Leicester City","url":"leicester-city"},
-            {"display":"Liverpool","url":"liverpool"},
-            {"display":"Manchester City","url":"manchester-city"},
-            {"display":"Manchester United","url":"manchester-united"},
-            {"display":"Newcastle United","url":"newcastle-united"},
-            {"display":"Nottingham Forest","url":"nottingham-forest"},
-            {"display":"Southampton","url":"southampton"},
-            {"display":"Tottenham Hotspur","url":"tottenham-hotspur"},
-            {"display":"West Ham United","url":"west-ham-united"},
-            {"display":"Wolverhampton Wanderers","url":"wolverhampton-wanderers"}
-        ]
-        }
-
+    "premier-league":[
+        {"display":"Arsenal","url":"arsenal"},
+        {"display":"Aston Villa","url":"aston-villa"},
+        {"display":"Bournemouth","url":"bournemouth"},
+        {"display":"Brentford","url":"brentford"},
+        {"display":"Brighton And Hove Albion","url":"brighton-and-hove-albion"},
+        {"display":"Chelsea","url":"chelsea"},
+        {"display":"Crystal Palace","url":"crystal-palace"},
+        {"display":"Everton","url":"everton"},
+        {"display":"Fulham","url":"fulham"},
+        {"display":"Ipswich Town","url":"ipswich-town"},
+        {"display":"Leicester City","url":"leicester-city"},
+        {"display":"Liverpool","url":"liverpool"},
+        {"display":"Manchester City","url":"manchester-city"},
+        {"display":"Manchester United","url":"manchester-united"},
+        {"display":"Newcastle United","url":"newcastle-united"},
+        {"display":"Nottingham Forest","url":"nottingham-forest"},
+        {"display":"Southampton","url":"southampton"},
+        {"display":"Tottenham Hotspur","url":"tottenham-hotspur"},
+        {"display":"West Ham United","url":"west-ham-united"},
+        {"display":"Wolverhampton Wanderers","url":"wolverhampton-wanderers"}
+        ],
+    "bundesliga":[
+        {"display":"Bayern Munich", "url":"bayern-munich"},
+        {"display":"SC Freiburg", "url":"freiburg"},
+        {"display":"Stuttgart", "url":"stuttgart"},
+        {"display":"RB Leipzig", "url":"rb-leipzig"},
+        {"display":"Werder Bremen", "url":"werder-bremen"},
+        {"display":"Eintracht Frankfurt", "url":"eintracht-frankfurt"},
+        {"display":"Holstein Kiel", "url":"holstein-kiel"},
+        {"display":"FC Augsburg", "url":"fc-augsburg"},
+        {"display":"Bochum", "url":"bochum"},
+        {"display":"Mainz", "url":"mainz"},
+        {"display":"Hoffenheim", "url":"hoffenheim"},
+        {"display":"Wolfsburg", "url":"wolfsburg"},
+        {"display":"Bayer Leverkusen", "url":"bayer-leverkusen"},
+        {"display":"Borussia Dortmund", "url":"borussia-dortmund"},
+        {"display":"St Pauli", "url":"st-pauli"},
+        {"display":"Borussia Monchengladbach", "url":"borussia-monchengladbach"},
+        {"display":"Heidenheim", "url":"heidenheim"},
+        {"display":"Union Berlin", "url":"union-berlin"}
+    ],
+    "la-liga":[
+        {"display":"Alaves", "url":"alaves"},
+        {"display":"Athletic Bilbao", "url":"athletic-bilbao"},
+        {"display":"Atletico Madrid", "url":"atletico-madrid"},
+        {"display":"Barcelona", "url":"Barcelona"},
+        {"display":"Celta Vigo", "url":"celta-vigo"},
+        {"display":"Espanyol", "url":"espanyol"},
+        {"display":"Getafe", "url":"getafe"},
+        {"display":"Girona", "url":"girona"},
+        {"display":"Las Palmas", "url":"las-palmas"},
+        {"display":"Leganes", "url":"leganes"},
+        {"display":"Real Mallorca", "url":"real-mallorca"},
+        {"display":"Osasuna", "url":"osasuna"},
+        {"display":"Rayo Vallecano", "url":"rayo-vallecano"},
+        {"display":"Real Betis", "url":"real-betis"},
+        {"display":"Real Madrid", "url":"real-madrid"},
+        {"display":"Real Sociedad", "url":"real-sociedad"},
+        {"display":"Real Valladolid", "url":"real-valladolid"},
+        {"display":"Sevilla", "url":"sevilla"},
+        {"display":"Valencia", "url":"valencia"},
+        {"display":"Villareal", "url":"villareal"}
     ]
+        
+
+    
 
 }
 

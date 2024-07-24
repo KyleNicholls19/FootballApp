@@ -24,7 +24,7 @@ function Routes() {
             element: <LeagueFixtures/>
         },
         {
-            path: '/fixtures/team/:name',
+            path: '/fixtures/team/:league/:name',
             element: <TeamFixtures/>
         }
     ])
