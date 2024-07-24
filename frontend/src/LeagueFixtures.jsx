@@ -2,7 +2,7 @@ import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group,NavLink } from '@mantine/core';
-import {names,PremierLeagueTeams} from './NameConversion.json'
+import {names} from './NameConversion.json'
 
 function LeagueFixtures() {
     const params = useParams()

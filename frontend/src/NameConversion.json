@@ -4,27 +4,33 @@
         {"display":"Premier League","url":"premier-league"},
         {"display":"La Liga","url":"la-liga"}
     ],
-    "PremierLeagueTeams":[
-        {"display":"Arsenal","url":"arsenal"},
-        {"display":"Aston Villa","url":"aston-villa"},
-        {"display":"Bournemouth","url":"bournemouth"},
-        {"display":"Brentford","url":"brentford"},
-        {"display":"Brighton And Hove Albion","url":"brighton-and-hove-albion"},
-        {"display":"Chelsea","url":"chelsea"},
-        {"display":"Crystal Palace","url":"crystal-palace"},
-        {"display":"Everton","url":"everton"},
-        {"display":"Fulham","url":"fulham"},
-        {"display":"Ipswich Town","url":"ipswich-town"},
-        {"display":"Leicester City","url":"leicester-city"},
-        {"display":"Liverpool","url":"liverpool"},
-        {"display":"Manchester City","url":"manchester-city"},
-        {"display":"Manchester United","url":"manchester-united"},
-        {"display":"Newcastle United","url":"newcastle-united"},
-        {"display":"Nottingham Forest","url":"nottingham-forest"},
-        {"display":"Southampton","url":"southampton"},
-        {"display":"Tottenham Hotspur","url":"tottenham-hotspur"},
-        {"display":"West Ham United","url":"west-ham-united"},
-        {"display":"Wolverhampton Wanderers","url":"wolverhampton-wanderers"}
+    "teams": [
+        { 
+        "premier-league":[
+            {"display":"Arsenal","url":"arsenal"},
+            {"display":"Aston Villa","url":"aston-villa"},
+            {"display":"Bournemouth","url":"bournemouth"},
+            {"display":"Brentford","url":"brentford"},
+            {"display":"Brighton And Hove Albion","url":"brighton-and-hove-albion"},
+            {"display":"Chelsea","url":"chelsea"},
+            {"display":"Crystal Palace","url":"crystal-palace"},
+            {"display":"Everton","url":"everton"},
+            {"display":"Fulham","url":"fulham"},
+            {"display":"Ipswich Town","url":"ipswich-town"},
+            {"display":"Leicester City","url":"leicester-city"},
+            {"display":"Liverpool","url":"liverpool"},
+            {"display":"Manchester City","url":"manchester-city"},
+            {"display":"Manchester United","url":"manchester-united"},
+            {"display":"Newcastle United","url":"newcastle-united"},
+            {"display":"Nottingham Forest","url":"nottingham-forest"},
+            {"display":"Southampton","url":"southampton"},
+            {"display":"Tottenham Hotspur","url":"tottenham-hotspur"},
+            {"display":"West Ham United","url":"west-ham-united"},
+            {"display":"Wolverhampton Wanderers","url":"wolverhampton-wanderers"}
+        ]
+        }
+
     ]
+
 }
 

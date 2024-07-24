@@ -1,5 +1,5 @@
 import { useParams,Link } from 'react-router-dom';
-import {PremierLeagueTeams,names} from './NameConversion.json'
+import {teams,names} from './NameConversion.json'
 import React, { useState,useEffect } from 'react'
 import { Flex, Center,Group,NavLink } from '@mantine/core';
 import Navbar from './Navbar.jsx';
@@ -32,7 +32,7 @@ function TeamFixtures() {
 
 
     const displayName = () =>{
-        const name = PremierLeagueTeams.find((item) => item.url === params.name)
+        const name = teams.find((item) => item.url === params.name)
 
         return name.display
     }
