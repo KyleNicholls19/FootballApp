@@ -32,7 +32,7 @@ function TeamFixtures() {
 
 
     const displayName = () =>{
-        const name = (params.league).find((item) => item.url === params.name)
+        const name = (datajson[params.league]).find((item) => item.url === params.name)
 
         return name.display
     }

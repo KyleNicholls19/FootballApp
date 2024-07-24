@@ -50,7 +50,6 @@ def get_fixture_data(page_data, team_fixtures):
     team_fixtures is a boolean to tell if the search is for a league's fixtures or a specific team
     team_fixtures = False if looking for a league's fixtures, True if looking for a team's fixtures
     '''
-
     # Finds all of the match dates and stores the text into a list
     dates = page_data.find_all('h4')
     dates_text = [date.text.strip() for date in dates]
