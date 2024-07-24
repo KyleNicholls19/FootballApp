@@ -33,13 +33,13 @@ General use navbar to be displayed on multiple parts of the site
             <Menu.Target>
               <div>{item.display}</div>
             </Menu.Target>
-            
+            {console.log(teams[item])}
             <Menu.Dropdown>
               <Menu.Label>Teams</Menu.Label>
               <ScrollArea h={400}>
-              <Menu.Item component={Link} to={`/fixtures/league/${item.url}`}>All Premier League Fixtures</Menu.Item>
-              {teams.map((item) => (
-                <Menu.Item component={Link} to={`/fixtures/team/${item.url}`} key={item.url}>{item.display}</Menu.Item>
+              <Menu.Item component={Link} to={`/fixtures/league/${item.url}`}>All {item.display} Fixtures</Menu.Item>
+              {(teams[item.url]).map((item2) => (
+                <Menu.Item component={Link} to={`/fixtures/team/${item2.url}`} key={item2.url}>{item2.display}</Menu.Item>
               ))}
               </ScrollArea>
             </Menu.Dropdown>
