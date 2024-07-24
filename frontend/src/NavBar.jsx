@@ -4,7 +4,34 @@ import data from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
 
 function Navbar() {
-  
+
+  function Test() {
+    {(data.names).map((item) => {
+      return(
+      <div>
+      
+
+      <Menu.Item>
+      <Menu trigger="hover" openDelay={100} closeDelay={400} position='right-start' withArrow offset={10}>
+        <Menu.Target>
+          <div>{item.display}</div>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Label>Teams</Menu.Label>
+          <ScrollArea h={400}>
+          <Menu.Item component={Link} to={`/fixtures/league/${item.url}`}>All {item.display} Fixtures</Menu.Item>
+          {(data[item.url]).map((item2) => (
+            <Menu.Item component={Link} to={`/fixtures/team/${item.url}/${item2.url}`} key={item2.url}>{item2.display}</Menu.Item>
+          ))}
+          </ScrollArea>
+        </Menu.Dropdown>
+      </Menu>
+      </Menu.Item>
+      </div>
+      )
+      })}
+  }
+
 
   
 /*
@@ -26,9 +53,8 @@ General use navbar to be displayed on multiple parts of the site
         </Menu.Target>
         <Menu.Dropdown>
           <Menu.Label>Main menu</Menu.Label>
-          {(data.names).map((item) => {
-            console.log('hello');
-
+          {(data.names).map((item) => (          
+          <>
           <Menu.Item>
           <Menu trigger="hover" openDelay={100} closeDelay={400} position='right-start' withArrow offset={10}>
             <Menu.Target>
@@ -43,9 +69,10 @@ General use navbar to be displayed on multiple parts of the site
               ))}
               </ScrollArea>
             </Menu.Dropdown>
-          </Menu>
-          </Menu.Item>
-          })}
+            </Menu>
+            </Menu.Item>
+            </>
+            ))}
 
         </Menu.Dropdown>
         </Menu>
