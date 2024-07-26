@@ -67,6 +67,49 @@
         {"display":"Sevilla", "url":"sevilla"},
         {"display":"Valencia", "url":"valencia"},
         {"display":"Villareal", "url":"villareal"}
+    ],
+    "ligue-1":[
+        {"display":"Angers", "url":"angers"},
+        {"display":"Auxerre", "url":"auxerre"},
+        {"display":"Brest", "url":"brest"},
+        {"display":"Le Havre", "url":"le-havre"},
+        {"display":"RC Lens", "url":"rc-lens"},
+        {"display":"Lille", "url":"lille"},
+        {"display":"Lyon", "url":"lyon"},
+        {"display":"Marseille", "url":"marseille"},
+        {"display":"Monaco", "url":"monaco"},
+        {"display":"Montpellier", "url":"montpellier"},
+        {"display":"Nantes", "url":"nantes"},
+        {"display":"Nice", "url":"nice"},
+        {"display":"Paris Saint-Germain", "url":"paris-saint-germain"},
+        {"display":"Reims", "url":"reims"},
+        {"display":"Rennes", "url":"rennes"},
+        {"display":"St Etienne", "url":"st-etienne"},
+        {"display":"Strasbourg", "url":"strasbourg"},
+        {"display":"Toulouse", "url":"Toulouse"}
+
+    ],
+    "serie-a":[
+        {"display":"Atalanta", "url":"atalanta"},
+        {"display":"Bologna", "url":"bologna"},
+        {"display":"Cagliari", "url":"cagliari"},
+        {"display":"Como", "url":"como"},
+        {"display":"Empoli", "url":"empoli"},
+        {"display":"Fiorentina", "url":"fiorentina"},
+        {"display":"Genoa", "url":"genoa"},
+        {"display":"Verona", "url":"verona"},
+        {"display":"Inter Milan", "url":"inter-milan"},
+        {"display":"Juventus", "url":"juventus"},
+        {"display":"Lazio", "url":"lazio"},
+        {"display":"Lecce", "url":"lecce"},
+        {"display":"AC Milan", "url":"ac-milan"},
+        {"display":"Monza", "url":"monza"},
+        {"display":"Napoli", "url":"napoli"},
+        {"display":"Parma", "url":"parma"},
+        {"display":"Roma", "url":"roma"},
+        {"display":"Torino", "url":"torino"},
+        {"display":"Udinese", "url":"udinese"},
+        {"display":"Venezia", "url":"venezia"}
     ]
         
 
