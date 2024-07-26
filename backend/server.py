@@ -78,7 +78,7 @@ def get_fixture_data(page_data, team_fixtures):
     df = pd.DataFrame(columns = column_names)
 
     # Finds the data for all the matches
-    match_info = page_data.find_all('a',{'class':'matches__item matches__link'})
+    match_info = page_data.find_all(class_ ='matches__item matches__link')
     match_index_counter = 0 # counter to correlate which match relates to the position in match_info
 
 
@@ -89,11 +89,11 @@ def get_fixture_data(page_data, team_fixtures):
     for i in range(len(dates)):
         for j in range(matches_per_day[i]):
             # Finds the match currently being iterated on per day
-            target_match = match_info[0].find_all('span',{'class':'swap-text__target'})[:2]
+            target_match = match_info[match_index_counter].find_all('span',{'class':'swap-text__target'})[:2]
             teams = [team.text.strip() for team in target_match]
 
             # Finds the match time for the current match
-            match_time = match_info[0].find('span',{'class':'matches__date'})
+            match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
             time = match_time.text.strip()
 
             if not team_fixtures:
