@@ -2,7 +2,9 @@
     "names": [
         {"display":"Bundesliga","url":"bundesliga"},
         {"display":"Premier League","url":"premier-league"},
-        {"display":"La Liga","url":"la-liga"}
+        {"display":"La Liga","url":"la-liga"},
+        {"display":"Serie A","url":"serie-a"},
+        {"display":"Ligue 1","url":"ligue-1"}
     ],
     "premier-league":[
         {"display":"Arsenal","url":"arsenal"},
