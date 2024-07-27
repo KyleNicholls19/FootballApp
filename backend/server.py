@@ -83,7 +83,6 @@ def get_fixture_data(page_data, team_fixtures):
 
 
 
-
     # Loops through every date and for every date find the information of the matches on that date
     # Uses the amount of matches per day and the match_index_counter to correlate which matches take place on which days
     for i in range(len(dates)):
