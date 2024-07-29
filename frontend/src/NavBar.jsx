@@ -16,10 +16,15 @@ General use navbar to be displayed on multiple parts of the site
       <>
 
       
-      <Flex direction='row' style={{width: '100%',backgroundColor:'violet',position:'fixed',top:'0',left:'0',zIndex:'999'}}justify='center' align='flex-start' gap='xl'>
+        <header className='header'>
+          <div className='inner'>
+        <Group>
         <ActionIcon variant='hover' component={Link} to='/'>
         <IconHome></IconHome>
         </ActionIcon> 
+        </Group>
+
+        <Group>
 
         <Menu openDelay={100} closeDelay={400}>
         <Menu.Target>
@@ -64,8 +69,12 @@ General use navbar to be displayed on multiple parts of the site
                 <Menu.Item component={Link} to={`/table/${item.url}`} key={item.url}>{item.display}</Menu.Item>
               ))}
             </Menu.Dropdown>
-          </Menu>    
-          </Flex>
+          </Menu> 
+
+          </Group>  
+          </div>
+          </header> 
+          
         </>
 
       );
