@@ -4,6 +4,7 @@ import GetTable from './GetTable.jsx'
 import LeagueFixtures from './LeagueFixtures.jsx'
 import {createBrowserRouter} from 'react-router-dom'
 import TeamFixtures from './TeamFixtures.jsx'
+import LeagueResults from './LeagueResults.jsx'
 
 
 function Routes() {
@@ -26,6 +27,10 @@ function Routes() {
         {
             path: '/fixtures/team/:league/:name',
             element: <TeamFixtures/>
+        },
+        {
+            path: '/results/league/:name',
+            element: <LeagueResults/>
         }
     ])
 }
