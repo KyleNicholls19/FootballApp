@@ -73,9 +73,9 @@ def get_result_data(page_data,isTeam):
 
     # Create the data frame to store the data
     if not isTeam:
-        column_names = ['Match Date','Team 1','Team 2','Time']
+        column_names = ['Match Date','Team 1','Team 2','Team 1 Score', 'Team 2 Score','Notes']
     else:
-        column_names = ['Match Date','Team 1','Team 2','Time','Fixture Type']
+        column_names = ['Match Date','Team 1','Team 2','Team 1 Score','Team 2 Score','Notes','Fixture Type']
     df = pd.DataFrame(columns = column_names)
 
     # Finds the data for all the matches
@@ -92,13 +92,18 @@ def get_result_data(page_data,isTeam):
             teams = [team.text.strip() for team in target_match]
 
             # Finds the match time for the current match
-            match_time = match_info[match_index_counter].find('span',{'class':'matches__date'})
-            time = match_time.text.strip()
+            scores = match_info[match_index_counter].find_all('span',{'class':'matches__teamscores-side'})
+            scores_text = [score.text.strip() for score in scores]
+
+            notes = match_info[match_index_counter].find('span',{'class':'matches__summary matches__summary--show'})
+            notes_text = ''
+            if notes:
+                notes_text = notes.text.strip()
 
             if not isTeam:
-                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time] # enters the data into the data frame
+                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],scores_text[0],scores_text[1],notes_text] # enters the data into the data frame
             else:
-                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],time,fixture_type_text[match_index_counter+1]] # enters the data into the data frame
+                df.loc[len(df)] = [dates_text[i],teams[0],teams[1],scores_text[0],scores_text[1],notes_text,fixture_type_text[match_index_counter+1]] # enters the data into the data frame
 
             match_index_counter += 1
     return(df)
@@ -204,7 +209,7 @@ def run_result_data(league,name):
 
     page = requests.get(url)
     page_data = BeautifulSoup(page.text, 'html.parser')
-    data = get_fixture_data(page_data, isTeam)
+    data = get_result_data(page_data, isTeam)
     return data.to_json(orient='index')
 
 
