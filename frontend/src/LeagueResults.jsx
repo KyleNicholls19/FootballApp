@@ -41,7 +41,7 @@ function LeagueResults(){
                 return (
                 <>
                 <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
-                <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} {item.Score1} {item.Score2} {item.Team2}</p>
+                <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} {item.Score1} {item.Score2} {item.Team2} {item.Notes}</p>
                 </>
                 )
                 
