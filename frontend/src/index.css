@@ -16,9 +16,13 @@
   }
   
 .navbar {
+    display: flex;
+    border: 3px 5px;
     background-color: rgb(150, 55, 238);
     width: 100%;
     position: fixed;
+    margin-left: 0;
+    top: 0;
 }
 .inner-navbar{
     width: 95%;
