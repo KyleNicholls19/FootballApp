@@ -1,4 +1,4 @@
-import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover ,NavLink,Flex,Box,Button, ScrollArea } from '@mantine/core';
+import { Anchor, Center, Container, Group, Menu, ActionIcon,Drawer,Popover ,NavLink,Flex,Box,Button, ScrollArea,SimpleGrid,Grid } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import data from './NameConversion.json'
 import {IconHome} from '@tabler/icons-react'
@@ -15,17 +15,17 @@ General use navbar to be displayed on multiple parts of the site
     return (
       <>
 
-      
+        <Box pb={60}>
         <header className='header'>
-          <div className='inner'>
-        <Group>
+
+        <Group className='navbar'>
         <ActionIcon variant='hover' component={Link} to='/'>
         <IconHome></IconHome>
         </ActionIcon> 
-        </Group>
 
-        <Group>
 
+        <Group className='inner-navbar'>
+        
         <Menu openDelay={100} closeDelay={400}>
         <Menu.Target>
         <Anchor target="_blank" underline="hover" className='nav-items'>Fixtures</Anchor>
@@ -70,11 +70,13 @@ General use navbar to be displayed on multiple parts of the site
               ))}
             </Menu.Dropdown>
           </Menu> 
-
-          </Group>  
-          </div>
-          </header> 
           
+          </Group>
+        
+
+          </Group>
+          </header> 
+          </Box>
         </>
 
       );

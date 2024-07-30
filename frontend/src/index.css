@@ -15,9 +15,12 @@
     padding-right: var(--mantine-spacing-md);
   }
   
-  .inner {
-    height: rem(56px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.navbar {
+    background-color: rgb(150, 55, 238);
+    width: 100%;
+    position: fixed;
+}
+.inner-navbar{
+    width: 95%;
+    justify-content: center;
+}
