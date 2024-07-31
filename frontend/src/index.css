@@ -41,8 +41,7 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-.teams {
-    display: inline-flex;
+.team1, .team2{
     font-size: 1.1em;
 }
 .team2 {
@@ -63,5 +62,9 @@ body {
 }
 .stack {
     width: 50%;
+    margin: auto;
+}
+
+.league-title {
     margin: auto;
 }

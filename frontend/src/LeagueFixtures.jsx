@@ -81,7 +81,7 @@ function LeagueFixtures() {
         
         
         <Stack align='stretch' className='stack'>
-        <h1>{displayName()} Fixtures</h1>
+        <h1 className='league-title'>{displayName()} Fixtures</h1>
         {Group()}
         </Stack>
         
