@@ -44,9 +44,9 @@ function LeagueFixtures() {
                 <>
                 <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
                 <div className='match' key={`${item.Team1}-${item.Team2}`}>
-                    <div className='teams'>{item.Team1}</div>
+                    <div className='team1'>{item.Team1}</div>
                     <div className='time'>{item.Time}</div>
-                    <div className='teams'>{item.Team2}</div>
+                    <div className='team2'>{item.Team2}</div>
                 </div>
                 </>
                 )
@@ -55,9 +55,9 @@ function LeagueFixtures() {
             return ( 
             <>
             <div className='match' key={`${item.Team1}-${item.Team2}`}>
-                <div className='teams'>{item.Team1}</div>
+                <div className='team1'>{item.Team1}</div>
                 <div className='time'>{item.Time}</div>
-                <div className='teams'>{item.Team2}</div>
+                <div className='team2'>{item.Team2}</div>
             </div>
             </>
             )
