@@ -32,3 +32,32 @@
 body {
     background-color: rgb(224, 219, 219);
 }
+
+.match {
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.teams {
+    display: inline-flex;
+    font-size: 1.1em;
+}
+
+.time {
+    flex-shrink: 0;
+    width: 50px; 
+    text-align: center;
+    font-weight: bold;
+    background-color: red;
+    
+}
+.flex {
+    width:50%;
+    
+}
+.stack {
+    width: 50%;
+    margin: auto;
+}
