@@ -3,6 +3,7 @@ import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group,NavLink } from '@mantine/core';
 import {names} from './NameConversion.json'
+import { MantineProvider } from '@mantine/core'
 
 function LeagueFixtures() {
     const params = useParams()
@@ -61,6 +62,7 @@ function LeagueFixtures() {
 
     return(
         <>
+        
         <Navbar></Navbar>
 
         <Link to={`../table/${params.name}`}>Table</Link>

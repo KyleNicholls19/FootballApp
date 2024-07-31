@@ -3,6 +3,7 @@ import { useParams,Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group,NavLink } from '@mantine/core';
 
+
 function LeagueResults(){
     const params = useParams()
     const [data,setData] = useState([])
