@@ -1,15 +1,11 @@
 .nav-items{
     color: black;
 }
-.match-date{
-    background-color: rgb(150, 55, 238);
-    text-align: center;
-}
+
 
 .header {
     height: rem(56px);
     margin-bottom: rem(120px);
-    background-color: var(--mantine-color-body);
     border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
     padding-left: var(--mantine-spacing-md);
     padding-right: var(--mantine-spacing-md);
@@ -30,7 +26,14 @@
     justify-content: center;
 }
 body {
-    background-color: rgb(224, 219, 219);
+    background-color: #111318;
+    color: #e2e2e9;
+}
+
+.match-date{
+    background-color: #dcbce0;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .match {
@@ -39,6 +42,7 @@ body {
     gap: 10px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+
 }
 
 .team1, .team2{
@@ -53,7 +57,7 @@ body {
     width: 50px; 
     text-align: center;
     font-weight: bold;
-    background-color: red;
+    background-color: #3f2844;
     
 }
 .flex {
@@ -67,4 +71,5 @@ body {
 
 .league-title {
     margin: auto;
+
 }
