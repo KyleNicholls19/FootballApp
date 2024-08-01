@@ -77,11 +77,15 @@ function LeagueFixtures() {
         
         <Navbar></Navbar>
 
-        <Link to={`../table/${params.name}`}>Table</Link>
+        
         
         
         <Stack align='stretch' className='stack'>
         <h1 className='league-title'>{displayName()} Fixtures</h1>
+        <Flex direction='row' gap='lg' className='flex-link'>
+        <Link to={`../table/${params.name}`} className='link'>  View Table  </Link>
+        <Link to={`../table/${params.name}`} className='link'>  View Table  </Link>
+        </Flex>
         {Group()}
         </Stack>
         

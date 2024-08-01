@@ -18,8 +18,8 @@
     border-radius: 5px;
     
     width: 100%;
-    margin-left: 0;
     top: 0;
+    position: absolute;
 }
 .inner-navbar{
     width: 95%;
@@ -30,6 +30,7 @@ body {
     color: #F2F2F2;
     font-family: "Bebas Neue";
     font-size: 1.1em;
+    margin: 0;
 }
 
 .match-date{
@@ -75,4 +76,14 @@ body {
 .league-title {
     margin: auto;
 
+}
+.link {
+    color: #F2F2F2;
+
+}
+.flex-link {
+    display: inline-flex;
+    margin: auto;
+    background-color: #6747A0;
+    justify-content: center;
 }
