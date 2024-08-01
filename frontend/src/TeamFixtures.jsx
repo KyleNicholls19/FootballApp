@@ -1,7 +1,7 @@
 import { useParams,Link } from 'react-router-dom';
 import datajson from './NameConversion.json'
 import React, { useState,useEffect } from 'react'
-import { Flex, Center,Group,NavLink } from '@mantine/core';
+import { Flex, Center,Group,NavLink ,Stack} from '@mantine/core';
 import Navbar from './Navbar.jsx';
 
 function TeamFixtures() {
@@ -41,16 +41,26 @@ function TeamFixtures() {
         <>
         <Navbar></Navbar>
 
-        <Flex direction='column' align='center'>
-        <h1>{displayName()}'s Fixtures</h1>
+        <Stack align='stretch' className='stack'>
+        <h1 className='league-title'>{displayName()}'s Fixtures</h1>
+
+        <Flex direction='row' gap='lg' className='flex-link'>
+            <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
+            <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
+        </Flex>
+
         {data.map((item) => (
             <>
             <h1 key={item.MatchDate} className='match-date'>{item.MatchDate}</h1>
-            <p key={`${item.Team1}-${item.Team2}-${item.FixtureType}`}>{item.Team1} {item.Time} {item.Team2} {item.FixtureType}</p>
+                <div className='match' key={`${item.Team1}-${item.Team2}`}>
+                    <div className='team1'>{item.Team1}</div>
+                    <div className='time'>{item.Time}</div>
+                    <div className='team2'>{item.Team2}</div>
+                </div>
             </>
             
         ))}
-        </Flex>
+        </Stack>
 
 
         
