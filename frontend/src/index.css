@@ -28,6 +28,8 @@
 body {
     background-color: #403A4B;
     color: #F2F2F2;
+    font-family: "Bebas Neue";
+    font-size: 1.1em;
 }
 
 .match-date{
