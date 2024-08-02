@@ -31,12 +31,12 @@ function GetTable() {
     }
 
     useEffect(() => {
-        getTable(params.leagueName)
+        getTable(params.league)
         // clears the data after creating the table
         return (
             setData([])
         )
-    },[params.leagueName])
+    },[params.league])
 
     // creates the columns needed in the table
     const columns = useMemo(() => [
@@ -134,7 +134,7 @@ function GetTable() {
 
     // finds the display name of the league from the url name to display on top of the table
     const displayName = () =>{
-        const name = names.find((item) => item.url === params.leagueName)
+        const name = names.find((item) => item.url === params.league)
 
         return name.display
     }
@@ -143,7 +143,7 @@ function GetTable() {
         <Navbar/>
         <Center>
         <h1>{displayName()} Table</h1>
-        <Link to={`../fixtures/league/${params.leagueName}`}>Fixtures</Link>
+        <Link to={`../fixtures/league/${params.league}`}>Fixtures</Link>
         </Center>
         <Flex 
         mih={50}
