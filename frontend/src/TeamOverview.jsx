@@ -14,16 +14,24 @@ function TeamOverview() {
         <>
             <Navbar></Navbar>
 
+            <h1 className='overview-title'>{params.name} Overview</h1>
+
+            <Group gap='xl' justify='center'>
 
             <ScrollArea h={500} w={500}>
-                <Box>
+                
                     <TeamFixtures></TeamFixtures>
-                </Box>
+                
                 
             </ScrollArea>
                 
-                
-            <GetTable></GetTable>
+            <ScrollArea h={500} w={900}> 
+
+                <GetTable></GetTable>
+
+            </ScrollArea>
+
+            </Group>
                 
            
         </>

@@ -138,21 +138,12 @@ function GetTable() {
 
         return name.display
     }
+    
     return(
         <>
-        <Navbar/>
-        <Center>
-        <h1>{displayName()} Table</h1>
-        <Link to={`../fixtures/league/${params.league}`}>Fixtures</Link>
-        </Center>
-        <Flex 
-        mih={50}
-        justify='center'
-        align='center'
-        wrap='wrap'
-        >
-            <MantineReactTable table ={buildTable} />
-        </Flex>
+
+        <MantineReactTable table ={buildTable} />
+        
         </>
 
     );

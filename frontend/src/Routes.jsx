@@ -7,6 +7,7 @@ import TeamFixtures from './TeamFixtures.jsx'
 import LeagueResults from './LeagueResults.jsx'
 import TeamOverview from './TeamOverview.jsx'
 import DisplayTeamFixtures from './DisplayTeamFixtures.jsx'
+import DisplayTable from './DisplayTable.jsx'
 
 
 function Routes() {
@@ -20,7 +21,7 @@ function Routes() {
         // table paths gathering the league name to find specific league
         {
             path: '/table/:league',
-            element: <GetTable/>
+            element: <DisplayTable/>
         },
         {
             path: '/fixtures/league/:name',
