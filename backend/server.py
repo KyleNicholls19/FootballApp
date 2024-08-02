@@ -201,7 +201,7 @@ def run_fixture_data(league,name):
 
 @app.route('/results/<league>/<name>')
 def run_result_data(league,name):
-    url =f'https://www.skysports.com/{name}-results'
+    url =f'https://www.skysports.com/{name}-results/2023-24'
     isTeam = True
     if league == 'league':
         isTeam = False

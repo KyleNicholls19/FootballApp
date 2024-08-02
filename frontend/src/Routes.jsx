@@ -8,6 +8,7 @@ import LeagueResults from './LeagueResults.jsx'
 import TeamOverview from './TeamOverview.jsx'
 import DisplayTeamFixtures from './DisplayTeamFixtures.jsx'
 import DisplayTable from './DisplayTable.jsx'
+import TeamResults from './TeamResults.jsx'
 
 
 function Routes() {
@@ -34,6 +35,10 @@ function Routes() {
         {
             path: '/results/league/:name',
             element: <LeagueResults/>
+        },
+        {
+            path: '/results/team/:league/:name',
+            element: <TeamResults/>
         },
         {
             path: '/team-overview/:league/:name',

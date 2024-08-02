@@ -55,6 +55,38 @@ General use navbar to be displayed on multiple parts of the site
 
         </Menu.Dropdown>
         </Menu>
+
+
+
+        <Menu openDelay={100} closeDelay={400}>
+        <Menu.Target>
+        <Anchor target="_blank" underline="hover" className='nav-items'>Results</Anchor>
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Label>Main menu</Menu.Label>
+          {(data.names).map((item) => (          
+          <>
+          <Menu.Item>
+          <Menu trigger="hover" openDelay={100} closeDelay={400} position='right-start' withArrow offset={10}>
+            <Menu.Target>
+              <div>{item.display}</div>
+            </Menu.Target>
+            <Menu.Dropdown>
+              <Menu.Label>Teams</Menu.Label>
+              <ScrollArea h={400}>
+              <Menu.Item component={Link} to={`/results/league/${item.url}`}>All {item.display} Results</Menu.Item>
+              {(data[item.url]).map((item2) => (
+                <Menu.Item component={Link} to={`/results/team/${item.url}/${item2.url}`} key={item2.url}>{item2.display}</Menu.Item>
+              ))}
+              </ScrollArea>
+            </Menu.Dropdown>
+            </Menu>
+            </Menu.Item>
+            </>
+            ))}
+
+        </Menu.Dropdown>
+        </Menu>
         
 
           <Menu withArrow offset={0} transitionProps={{transition: 'pop',duration:150}}>
