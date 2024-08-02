@@ -2,7 +2,7 @@ import { useParams,Link } from 'react-router-dom';
 import datajson from './NameConversion.json'
 import React, { useState,useEffect } from 'react'
 import { Flex, Center,Group,NavLink ,Stack} from '@mantine/core';
-import Navbar from './Navbar.jsx';
+
 
 function TeamFixtures() {
     const params = useParams()
@@ -31,23 +31,8 @@ function TeamFixtures() {
     },[params.name])
 
 
-    const displayName = () =>{
-        const name = (datajson[params.league]).find((item) => item.url === params.name)
-
-        return name.display
-    }
-
     return(
         <>
-        <Navbar></Navbar>
-
-        <Stack align='stretch' className='stack'>
-        <h1 className='league-title'>{displayName()}'s Fixtures</h1>
-
-        <Flex direction='row' gap='lg' className='flex-link'>
-            <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
-            <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
-        </Flex>
 
         {data.map((item) => (
             <>
@@ -60,10 +45,7 @@ function TeamFixtures() {
             </>
             
         ))}
-        </Stack>
-
-
-        
+               
         </>
     )
 

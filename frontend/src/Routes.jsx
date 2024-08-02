@@ -6,6 +6,7 @@ import {createBrowserRouter} from 'react-router-dom'
 import TeamFixtures from './TeamFixtures.jsx'
 import LeagueResults from './LeagueResults.jsx'
 import TeamOverview from './TeamOverview.jsx'
+import DisplayTeamFixtures from './DisplayTeamFixtures.jsx'
 
 
 function Routes() {
@@ -27,7 +28,7 @@ function Routes() {
         },
         {
             path: '/fixtures/team/:league/:name',
-            element: <TeamFixtures/>
+            element: <DisplayTeamFixtures/>
         },
         {
             path: '/results/league/:name',
