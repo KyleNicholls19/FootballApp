@@ -4,7 +4,7 @@ import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
 import Navbar from './Navbar.jsx';
 import { useParams,Link } from 'react-router-dom';
-import {names} from './NameConversion.json'
+import {names} from '../NameConversion.json'
 
 function GetTable() {
     

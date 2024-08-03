@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useParams,Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import { Flex, Center,Group,NavLink,Stack } from '@mantine/core';
-import {names} from './NameConversion.json';
+import {names} from '../NameConversion.json';
 
 
 function LeagueResults(){

@@ -1,5 +1,5 @@
-import TeamFixtures from "../TeamFixtures.jsx";
-import Navbar from '../Navbar.jsx';
+import TeamFixtures from "../components/TeamFixtures.jsx";
+import Navbar from '../components/Navbar.jsx';
 import { Flex, Center,Group,NavLink ,Stack} from '@mantine/core';
 import datajson from '../NameConversion.json';
 import { useParams,Link } from 'react-router-dom';

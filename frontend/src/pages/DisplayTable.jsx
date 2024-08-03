@@ -2,10 +2,10 @@ import React, { useState,useEffect,useMemo } from 'react'
 import { MantineReactTable, useMantineReactTable } from 'mantine-react-table';
 import { MantineProvider, useMantineTheme } from '@mantine/core';
 import { Flex, Center } from '@mantine/core';
-import Navbar from '../Navbar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { useParams,Link } from 'react-router-dom';
 import {names} from '../NameConversion.json'
-import GetTable from '../GetTable.jsx';
+import GetTable from '../components/GetTable.jsx';
 
 function DisplayTable() {
     const params = useParams();

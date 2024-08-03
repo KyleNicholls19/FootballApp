@@ -1,6 +1,6 @@
 import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect } from 'react'
-import Navbar from './Navbar.jsx';
+import Navbar from './components/Navbar.jsx';
 import { Flex, Center,Group,NavLink,Box,Stack } from '@mantine/core';
 import {names} from './NameConversion.json'
 import { MantineProvider } from '@mantine/core'

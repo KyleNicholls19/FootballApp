@@ -1,5 +1,5 @@
 import { useParams,Link } from 'react-router-dom';
-import datajson from './NameConversion.json'
+import datajson from '../NameConversion.json'
 import React, { useState,useEffect } from 'react'
 import { Flex, Center,Group,NavLink ,Stack} from '@mantine/core';
 

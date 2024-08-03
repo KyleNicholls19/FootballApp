@@ -1,4 +1,4 @@
-import Navbar from '../Navbar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { useParams } from 'react-router-dom';
 import {Stack} from '@mantine/core';
 import names from '../NameConversion.json'
