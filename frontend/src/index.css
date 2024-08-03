@@ -91,4 +91,12 @@ body {
 .overview-title{
     text-align: center;
 }
-
+.score-container {
+    display: flex;
+    gap: 10px;
+}
+.fixture-type {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}

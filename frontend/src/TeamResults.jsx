@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useParams,Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
-import { Flex, Center,Group,NavLink } from '@mantine/core';
+import { Flex, Center,Group,NavLink,Stack } from '@mantine/core';
 import datajson from './NameConversion.json'
 
 function TeamResults() {
@@ -51,7 +51,20 @@ function TeamResults() {
         <Navbar></Navbar>
         <h1>{displayName()}'s Results</h1>
         {data.map((item)=> (
-            <p key={`${item.Team1}-${item.Team2}`}>{item.Team1} {item.Score1} {item.Score2} {item.Team2} {item.Notes}</p>
+            <>
+            <Stack align='stretch' className='stack'>
+            <div className='match' key={`${item.Team1}-${item.Team2}`}>
+                    <div className='team1'>{item.Team1}</div>
+                    <div className='score-container'>
+                        <div className='scores'>{item.Score1}</div>
+                        <div className='scores'>{item.Score2}</div>
+                    </div>                 
+                    <div className='team2'>{item.Team2}</div>
+                    <div className='fixture-type'>{item.FixtureType}</div>
+                    <div className='notes'>{item.Notes}</div>
+            </div>
+            </Stack>
+            </>
         ))}
         </>
     )
