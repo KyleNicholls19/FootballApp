@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar.jsx';
 import { useParams } from 'react-router-dom';
 import {Stack} from '@mantine/core';
 import names from '../NameConversion.json'
-import TeamResults from '../TeamResults.jsx';
+import TeamResults from '../components/TeamResults.jsx';
 
 function DisplayTeamFixtures() {
     const params = useParams()
