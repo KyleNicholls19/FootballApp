@@ -4,11 +4,11 @@ import GetTable from './GetTable.jsx'
 import LeagueFixtures from './LeagueFixtures.jsx'
 import {createBrowserRouter} from 'react-router-dom'
 import TeamFixtures from './TeamFixtures.jsx'
-import LeagueResults from './LeagueResults.jsx'
+import DisplayLeagueResults from './pages/DisplayLeagueResults.jsx'
 import TeamOverview from './TeamOverview.jsx'
-import DisplayTeamFixtures from './DisplayTeamFixtures.jsx'
-import DisplayTable from './DisplayTable.jsx'
-import TeamResults from './TeamResults.jsx'
+import DisplayTeamFixtures from './pages/DisplayTeamFixtures.jsx'
+import DisplayTable from './pages/DisplayTable.jsx'
+import DisplayTeamResults from './pages/DisplayTeamResults.jsx'
 
 
 function Routes() {
@@ -34,11 +34,11 @@ function Routes() {
         },
         {
             path: '/results/league/:name',
-            element: <LeagueResults/>
+            element: <DisplayLeagueResults/>
         },
         {
             path: '/results/team/:league/:name',
-            element: <TeamResults/>
+            element: <DisplayTeamResults/>
         },
         {
             path: '/team-overview/:league/:name',
