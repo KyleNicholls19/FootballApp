@@ -113,3 +113,6 @@ body {
     text-align: justify;
     font-family: "Josefin Slab", serif;
 }
+.result-name {
+    text-align: center;
+}
