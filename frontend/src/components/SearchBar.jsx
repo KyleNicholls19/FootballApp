@@ -1,28 +1,25 @@
 import { Autocomplete, rem } from "@mantine/core";
 import { IconSearch } from '@tabler/icons-react';
-import data from '../NameConversion.json';
+import {names} from '../NameConversion.json';
 import { useState } from "react";
 
 
 function SearchBar() {
 
-    const [leagueNames,setLeagueNames] = useState([])
+    const leagueNames = names.map(item => item.display)
 
-    const leagueSearch = data.names.map((item) =>{
-        setLeagueNames([...l,item])
-    })
+    function handleSubmit(value){
+        console.log(value)
 
-
-
+    }
 
     return(
         <Autocomplete
         placeholder="Search"
         leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
-        data={[
-            { group: 'Leagues', items: [leagueNames]}
-        ]}
+        data={leagueNames}
         limit={5}
+        onOptionSubmit={(value) => handleSubmit(value)}
         />
     )
 }
