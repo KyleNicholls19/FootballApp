@@ -1,4 +1,4 @@
-import { Autocomplete, rem } from "@mantine/core";
+import { Autocomplete, rem, Select } from "@mantine/core";
 import { IconSearch } from '@tabler/icons-react';
 import {names} from '../NameConversion.json';
 import { useState } from "react";
@@ -14,12 +14,14 @@ function SearchBar() {
     }
 
     return(
-        <Autocomplete
+        <Select
         placeholder="Search"
         leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
         data={leagueNames}
         limit={5}
-        onOptionSubmit={(value) => handleSubmit(value)}
+        onChange={(value) => handleSubmit(value)}
+        searchable
+        clearable
         />
     )
 }
