@@ -25,9 +25,21 @@ function SearchBar() {
 
     function handleSubmit(value){
         if (value){
-            //const name = names.find((item) => item.display === value)
+            dataset.names.forEach(league => {
+                if (league.display === value) { 
+                    navigate(`/fixtures/league/${league.url}`, {replace: true})
+                }
+                else {
+                    const leagueKey = league.url;
+                    dataset[leagueKey].forEach(team => {
+                        if (team.display === value) {
+                            navigate(`/fixtures/team/${league.url}/${team.url}`, {replace: true})
+                        }
+                    })
+                }
+       
+            })
 
-            //navigate(`/fixtures/league/${name.url}`, {replace: true})
         }
 
     }
