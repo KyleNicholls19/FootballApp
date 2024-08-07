@@ -2,14 +2,20 @@ import { Autocomplete, rem, Select } from "@mantine/core";
 import { IconSearch } from '@tabler/icons-react';
 import {names} from '../NameConversion.json';
 import { useState } from "react";
+import { redirect, useNavigate } from "react-router-dom";
 
 
 function SearchBar() {
 
     const leagueNames = names.map(item => item.display)
+    const navigate = useNavigate()
 
     function handleSubmit(value){
-        console.log(value)
+        if (value){
+            const name = names.find((item) => item.display === value)
+
+            navigate(`/fixtures/league/${name.url}`, {replace: true})
+        }
 
     }
 
