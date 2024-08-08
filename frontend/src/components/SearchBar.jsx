@@ -19,6 +19,7 @@ function SearchBar() {
           });
         }
       });
+      
 
 
     const navigate = useNavigate()
