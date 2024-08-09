@@ -21,12 +21,12 @@ function LeagueFixtures() {
 
 
     useEffect(() => {
-        getFixtures(params.name)
+        getFixtures(params.league)
 
         return (
             setData([])
         )
-    },[params.name])
+    },[params.league])
 
 
     let matchList = []

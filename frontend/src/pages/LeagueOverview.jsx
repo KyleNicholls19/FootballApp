@@ -14,7 +14,7 @@ function LeagueOverview() {
         <>
         <Navbar></Navbar>
 
-        <h1 className='overview-title'>{params.name} Overview</h1>
+        <h1 className='overview-title'>{params.league} Overview</h1>
 
         <Group className='overview-table-results'>
         <Stack>

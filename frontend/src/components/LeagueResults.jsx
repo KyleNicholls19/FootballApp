@@ -25,12 +25,12 @@ function LeagueResults(){
     }
 
     useEffect(() => {
-        getResults(params.name)
+        getResults(params.league)
 
         return (
             setData([])
         )
-    },[params.name])
+    },[params.league])
 
 
 

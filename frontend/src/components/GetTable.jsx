@@ -14,7 +14,6 @@ function GetTable() {
 
     async function getTable(league) {
       // gathers the data from the backend and turns it to json form
-      console.log(league)
       const url = 'http://127.0.0.1:5000/table/' + league
       const response = await fetch(url)
       const data = await response.json()

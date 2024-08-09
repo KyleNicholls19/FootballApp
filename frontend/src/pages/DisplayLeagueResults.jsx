@@ -8,7 +8,7 @@ function DisplayLeagueResults() {
     const params = useParams()
 
     const displayName = () =>{
-        const name = names.find((item) => item.url === params.name)
+        const name = names.find((item) => item.url === params.league)
 
         return name.display
     }

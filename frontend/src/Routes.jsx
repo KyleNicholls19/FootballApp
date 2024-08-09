@@ -24,7 +24,7 @@ function Routes() {
             element: <DisplayTable/>
         },
         {
-            path: '/fixtures/league/:name',
+            path: '/fixtures/league/:league',
             element: <DisplayLeagueFixtures/>
         },
         {
@@ -32,7 +32,7 @@ function Routes() {
             element: <DisplayTeamFixtures/>
         },
         {
-            path: '/results/league/:name',
+            path: '/results/league/:league',
             element: <DisplayLeagueResults/>
         },
         {
@@ -44,7 +44,7 @@ function Routes() {
             element: <TeamOverview/>
         },
         {
-            path: '/overview/league/:name',
+            path: '/overview/league/:league',
             element: <LeagueOverview/>
         }
     ])
