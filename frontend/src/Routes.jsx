@@ -3,10 +3,11 @@ import PageNotFound from './pages/PageNotFound.jsx'
 import LeagueFixtures from './LeagueFixtures.jsx'
 import {createBrowserRouter} from 'react-router-dom'
 import DisplayLeagueResults from './pages/DisplayLeagueResults.jsx'
-import TeamOverview from './TeamOverview.jsx'
 import DisplayTeamFixtures from './pages/DisplayTeamFixtures.jsx'
 import DisplayTable from './pages/DisplayTable.jsx'
 import DisplayTeamResults from './pages/DisplayTeamResults.jsx'
+import TeamOverview from './TeamOverview.jsx'
+import LeagueOverview from './LeagueOverview.jsx'
 
 
 function Routes() {
@@ -41,6 +42,10 @@ function Routes() {
         {
             path: '/team-overview/:league/:name',
             element: <TeamOverview/>
+        },
+        {
+            path: '/league-overview/league/:name',
+            element: <LeagueOverview/>
         }
     ])
 }
