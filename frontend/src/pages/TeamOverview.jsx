@@ -1,11 +1,11 @@
 import { useParams,Link } from 'react-router-dom';
-import names from './NameConversion.json'
+import names from '../NameConversion.json'
 import React, { useState,useEffect } from 'react'
 import { Flex, Center,Group,NavLink ,Stack,Grid,ScrollArea,Box} from '@mantine/core';
-import Navbar from './components/Navbar.jsx';
-import TeamFixtures from './components/TeamFixtures.jsx';
-import GetTable from './components/GetTable.jsx';
-import TeamResults from './components/TeamResults.jsx';
+import Navbar from '../components/Navbar.jsx';
+import TeamFixtures from '../components/TeamFixtures.jsx';
+import GetTable from '../components/GetTable.jsx';
+import TeamResults from '../components/TeamResults.jsx';
 
 
 function TeamOverview() {

@@ -28,13 +28,13 @@ function SearchBar() {
         if (value){
             dataset.names.forEach(league => {
                 if (league.display === value) { 
-                    navigate(`/fixtures/league/${league.url}`, {replace: true})
+                    navigate(`/overview/league/${league.url}`, {replace: true})
                 }
                 else {
                     const leagueKey = league.url;
                     dataset[leagueKey].forEach(team => {
                         if (team.display === value) {
-                            navigate(`/fixtures/team/${league.url}/${team.url}`, {replace: true})
+                            navigate(`/overview/team/${league.url}/${team.url}`, {replace: true})
                         }
                     })
                 }
