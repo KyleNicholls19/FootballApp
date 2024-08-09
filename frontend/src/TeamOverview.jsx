@@ -17,33 +17,37 @@ function TeamOverview() {
 
             <h1 className='overview-title'>{params.name} Overview</h1>
 
-            <Group gap='xl' justify='center' className='overview-table-results'>
+            <Group className='overview-table-results'>
             <Stack>
-            <h1 className='title'>Fixtures</h1>
-            <ScrollArea h={500} w={500}>
+                <h1 className='title'>Fixtures</h1>
+                <ScrollArea h={500} w={500}>
                     <TeamFixtures></TeamFixtures>
-                
-                
-            </ScrollArea>
+                </ScrollArea>
             </Stack>
 
             <Stack>
-            <h1 className='title'>Results</h1>
-            <ScrollArea h={500} w={500}>
-                <TeamResults></TeamResults>
-            </ScrollArea>
+                <h1 className='title'>Results</h1>
+
+                <ScrollArea h={500} w={500}>
+
+                    <TeamResults></TeamResults>
+
+                </ScrollArea>
 
             </Stack>
             
 
-
             </Group>
 
-            <ScrollArea h={500} w={900}> 
+            <Stack>
+                <h1 className='title'>League Table</h1>
+            <ScrollArea h={500} w={900} className='table-overview'> 
 
                 <GetTable></GetTable>
 
             </ScrollArea>
+
+            </Stack>
                 
            
         </>

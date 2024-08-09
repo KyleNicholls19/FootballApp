@@ -121,7 +121,12 @@ body {
     margin: auto;
     justify-content: center;
     padding-bottom: 50px;
+    gap: 100px;
 }
 .title{
     margin: auto;
+}
+.table-overview{
+    margin: auto;
+    padding-bottom: 30px;
 }
