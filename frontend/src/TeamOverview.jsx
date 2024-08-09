@@ -5,6 +5,7 @@ import { Flex, Center,Group,NavLink ,Stack,Grid,ScrollArea,Box} from '@mantine/c
 import Navbar from './components/Navbar.jsx';
 import TeamFixtures from './components/TeamFixtures.jsx';
 import GetTable from './components/GetTable.jsx';
+import TeamResults from './components/TeamResults.jsx';
 
 
 function TeamOverview() {
@@ -16,22 +17,33 @@ function TeamOverview() {
 
             <h1 className='overview-title'>{params.name} Overview</h1>
 
-            <Group gap='xl' justify='center'>
-
+            <Group gap='xl' justify='center' className='overview-table-results'>
+            <Stack>
+            <h1 className='title'>Fixtures</h1>
             <ScrollArea h={500} w={500}>
-                
                     <TeamFixtures></TeamFixtures>
                 
                 
             </ScrollArea>
-                
+            </Stack>
+
+            <Stack>
+            <h1 className='title'>Results</h1>
+            <ScrollArea h={500} w={500}>
+                <TeamResults></TeamResults>
+            </ScrollArea>
+
+            </Stack>
+            
+
+
+            </Group>
+
             <ScrollArea h={500} w={900}> 
 
                 <GetTable></GetTable>
 
             </ScrollArea>
-
-            </Group>
                 
            
         </>

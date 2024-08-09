@@ -116,3 +116,12 @@ body {
 .result-name {
     text-align: center;
 }
+
+.overview-table-results {
+    margin: auto;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.title{
+    margin: auto;
+}
