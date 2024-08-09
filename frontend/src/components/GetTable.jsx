@@ -132,12 +132,6 @@ function GetTable() {
          
     });
 
-    // finds the display name of the league from the url name to display on top of the table
-    const displayName = () =>{
-        const name = names.find((item) => item.url === params.league)
-
-        return name.display
-    }
     
     return(
         <>
