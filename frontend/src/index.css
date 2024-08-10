@@ -130,3 +130,17 @@ body {
     margin: auto;
     padding-bottom: 30px;
 }
+
+.home-stack{
+    width: 50%;
+    margin: auto;
+}
+
+.home{
+    text-align: center;
+    font-size: 5rem;
+}
+.home-subtext{
+    text-align: center;
+    font-size: 2rem;
+}

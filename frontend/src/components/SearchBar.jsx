@@ -47,7 +47,6 @@ function SearchBar() {
 
     return(
         <Select
-        label='Search'
         placeholder="Search"
         leftSection={<IconSearch style={{ width: rem(16), height: rem(16) }} stroke={1.5} />}
         data={data}
