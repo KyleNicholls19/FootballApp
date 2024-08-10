@@ -16,7 +16,7 @@ function DisplayLeagueResults() {
     return(
         <>
         <Navbar></Navbar>
-        <h1 className='result-name'>{displayName()} Fixtures</h1>
+        <h1 className='result-name'>{displayName()} Results</h1>
 
         <Stack align='stretch' className='stack'>
 
