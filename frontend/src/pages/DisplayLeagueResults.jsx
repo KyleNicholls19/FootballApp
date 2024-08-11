@@ -12,6 +12,7 @@ function DisplayLeagueResults() {
 
         return name.display
     }
+    
 
     return(
         <>
