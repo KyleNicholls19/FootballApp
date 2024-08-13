@@ -4,8 +4,9 @@ import React, { useState,useEffect } from 'react'
 import { Flex, Center,Group,NavLink ,Stack,Grid,ScrollArea,Box} from '@mantine/core';
 import Navbar from '../components/Navbar.jsx';
 import GetTable from '../components/GetTable.jsx';
-import LeagueFixtures from '../LeagueFixtures.jsx';
+import LeagueFixtures from '../components/LeagueFixtures.jsx';
 import LeagueResults from '../components/LeagueResults.jsx';
+import DisplayNameLeague from '../Helpers.jsx'
 
 function LeagueOverview() {
     const params = useParams();
@@ -14,7 +15,7 @@ function LeagueOverview() {
         <>
         <Navbar></Navbar>
 
-        <h1 className='overview-title'>{params.league} Overview</h1>
+        <h1 className='overview-title'>{DisplayNameLeague(params.league)} Overview</h1>
 
         <Group className='overview-table-results'>
         <Stack>
