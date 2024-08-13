@@ -20,6 +20,7 @@ function TeamFixtures() {
         }
 
 
+
     }
 
     useEffect(() => {
@@ -41,6 +42,7 @@ function TeamFixtures() {
                     <div className='team1'>{item.Team1}</div>
                     <div className='time'>{item.Time}</div>
                     <div className='team2'>{item.Team2}</div>
+                    <div className='fixture-type'>{item.FixtureType}</div>
                 </div>
             </>
             
