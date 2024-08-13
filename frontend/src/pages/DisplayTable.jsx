@@ -6,21 +6,16 @@ import Navbar from '../components/Navbar.jsx';
 import { useParams,Link } from 'react-router-dom';
 import {names} from '../NameConversion.json'
 import GetTable from '../components/GetTable.jsx';
+import DisplayNameLeague from '../Helpers.jsx'
 
 function DisplayTable() {
     const params = useParams();
-
-    const displayName = () =>{
-        const name = names.find((item) => item.url === params.league)
-
-        return name.display
-    }
 
     return(
         <>
         <Navbar/>
         <Center>
-        <h1>{displayName()} Table</h1>
+        <h1>{DisplayNameLeague(params.league)} Table</h1>
         <Link to={`../fixtures/league/${params.league}`}>Fixtures</Link>
         </Center>
         <Flex 
