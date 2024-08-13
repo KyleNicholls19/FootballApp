@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar.jsx';
 import { useParams } from 'react-router-dom';
 import {Stack} from '@mantine/core';
 import LeagueResults from '../components/LeagueResults.jsx';
-import DisplayNameLeague from '../Helpers.jsx'
+import { DisplayNameLeague } from '../Helpers.jsx'
 
 function DisplayLeagueResults() {
     const params = useParams()

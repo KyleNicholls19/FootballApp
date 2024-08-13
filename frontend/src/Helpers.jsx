@@ -7,7 +7,10 @@ export default function DisplayNameLeague(name_match) {
 }
 
 
-export function DisplayNameTeam(name_match) {
+export function DisplayNameTeam(league,team) {
+    const name = data[league].find((item) => item.url === team)
+
+    return name.display
 
 }
 

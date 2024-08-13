@@ -3,23 +3,18 @@ import Navbar from '../components/Navbar.jsx';
 import { Flex, Center,Group,NavLink ,Stack} from '@mantine/core';
 import datajson from '../NameConversion.json';
 import { useParams,Link } from 'react-router-dom';
+import { DisplayNameTeam } from "../Helpers.jsx";
 
 
 function DisplayTeamFixtures() {
     const params = useParams()
-
-    const displayName = () =>{
-        const name = (datajson[params.league]).find((item) => item.url === params.name)
-
-        return name.display
-    }
 
     return (
         <>
         <Navbar></Navbar>
 
         <Stack align='stretch' className='stack'>
-        <h1 className='league-title'>{displayName()}'s Fixtures</h1>
+        <h1 className='league-title'>{DisplayNameTeam(params.league,params.name)}'s Fixtures</h1>
 
         <Flex direction='row' gap='lg' className='flex-link'>
             <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
