@@ -2,7 +2,7 @@ import { useParams,Link } from 'react-router-dom';
 import React, { useState,useEffect } from 'react'
 import Navbar from '../components/Navbar.jsx';
 import { Flex, Center,Group,NavLink,Box,Stack } from '@mantine/core';
-import { DisplayNameLeague } from '../Helpers.jsx'
+import  DisplayNameLeague  from '../Helpers.jsx'
 
 
 function DisplayLeagueFixtures(){

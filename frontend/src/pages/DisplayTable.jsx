@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar.jsx';
 import { useParams,Link } from 'react-router-dom';
 import {names} from '../NameConversion.json'
 import GetTable from '../components/GetTable.jsx';
-import { DisplayNameLeague } from '../Helpers.jsx'
+import  DisplayNameLeague  from '../Helpers.jsx'
 
 function DisplayTable() {
     const params = useParams();
