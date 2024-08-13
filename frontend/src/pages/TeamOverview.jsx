@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar.jsx';
 import TeamFixtures from '../components/TeamFixtures.jsx';
 import GetTable from '../components/GetTable.jsx';
 import TeamResults from '../components/TeamResults.jsx';
+import { DisplayNameTeam } from "../Helpers.jsx";
 
 
 function TeamOverview() {
@@ -15,7 +16,7 @@ function TeamOverview() {
         <>
             <Navbar></Navbar>
 
-            <h1 className='overview-title'>{params.name} Overview</h1>
+            <h1 className='overview-title'>{DisplayNameTeam(params.league,params.name)} Overview</h1>
 
             <Group className='overview-table-results'>
             <Stack>
