@@ -18,6 +18,7 @@ function DisplayTeamFixtures() {
         <Flex direction='row' gap='lg' className='flex-link'>
             <Link to={`../table/${params.league}`} className='link'>  View Table  </Link>
             <Link to={`../results/team/${params.league}/${params.name}`} className='link'>  View Results  </Link>
+            <Link to={`../overview/team/${params.league}/${params.name}`} className='link'>  View Overview  </Link>
         </Flex>
 
         <TeamFixtures/>
